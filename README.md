@@ -61,28 +61,32 @@ How it is built:
 
 ### Copy data from another Music Assistant app
 
-Each app keeps its settings and library in its own `/data` folder, which lives on the host under
-a folder named after the app's slug. To move from the official app to one of these (or between
-channels), copy that folder from the
-[Advanced SSH & Web Terminal](https://github.com/hassio-addons/app-ssh) app with **protection
-mode** turned off, so it can run `docker`.
+Each app keeps its settings and library in its own `/data` folder, which is
+`/mnt/data/supervisor/apps/data/<slug>/` on the host (`addons/data` instead of `apps/data` on
+older versions). To move from the official app to one of these (or between channels), copy that
+folder from the [Advanced SSH & Web Terminal](https://github.com/hassio-addons/app-ssh) app with
+**protection mode** turned off, so it can run `docker`.
 
-Find the slugs with `ha apps list | grep -i music` (`ha addons list` on older versions). The
-app containers are named `app_<slug>` (`addon_<slug>` on older versions); check with
-`docker ps -a --format '{{.Names}}' | grep -i music`.
+Find the slugs with `ha apps list | grep -i music` (`ha addons list` on older versions).
 
-**1. Find the data folder.** Ask Docker where the target app's `/data` is on the host:
+**1. Check the folders.** Run this on its own first:
 
 ```bash
 SRC=d5369777_music_assistant_dev
 DST=d4cd87db_music_assistant_lights_edge
-DATA=$(dirname "$(docker inspect app_$DST --format '{{range .Mounts}}{{if eq .Destination "/data"}}{{.Source}}{{end}}{{end}}')")
-echo $DATA
+DATA=/mnt/data/supervisor/apps/data
 docker run --rm -v $DATA:/d alpine ls -la /d/$SRC /d/$DST
 ```
 
-Go on only if both folders are listed, with `settings.json` in each. If not, fix the slugs or
-container name first.
+Go on only if both folders are listed, with `settings.json` in each. If not, ask Docker where a
+running app keeps its data; the parent of that folder is `DATA`:
+
+```bash
+docker inspect app_$DST --format '{{range .Mounts}}{{if eq .Destination "/data"}}{{.Source}}{{end}}{{end}}'
+```
+
+The container is named `app_<slug>` (`addon_<slug>` on older versions). A stopped app has no
+container, so inspect one that is running.
 
 **2. Copy.** Each command checks the folders again and does nothing if one is missing:
 
