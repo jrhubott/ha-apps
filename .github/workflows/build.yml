@@ -169,7 +169,7 @@ jobs:
         run: |
           mkdir -p results
           python3 scripts/publish.py results "$GITHUB_REPOSITORY"
-          git add -A -- . ':!results'
+          git add -A
           if git diff --cached --quiet; then
             echo "Nothing to publish"
             exit 0
