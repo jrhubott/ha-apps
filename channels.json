@@ -10,7 +10,7 @@
   "channels": {
     "edge": {
       "slug": "music_assistant_lights_edge",
-      "name": "Music Assistant (light follow) Edge",
+      "name": "Music Assistant Edge (jrhubott)",
       "stage": "experimental",
       "base_image_key": "NIGHTLY"
     }

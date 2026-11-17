@@ -18,11 +18,11 @@ it from the repository URL), for example `d4cd87db_music_assistant_lights_edge`.
 
 | App | Folder | What it is |
 |---|---|---|
-| Music Assistant (light follow) Edge | `music_assistant_lights_edge` | Music Assistant with Hue lights that follow a speaker, plus the other features merged into the forks' `edge` branches, on upstream `dev`/`main` |
+| Music Assistant Edge (jrhubott) | `music_assistant_lights_edge` | Upstream Music Assistant `dev`/`main` plus the feature branches merged into the forks' `edge` branches (Hue lights that follow a speaker, fixes in progress) |
 
 An app shows up in the store once its first image is built and its folder is committed.
 
-## Music Assistant (light follow)
+## Music Assistant Edge (jrhubott)
 
 An unofficial build of the [Music Assistant](https://music-assistant.io) server built from the
 `edge` branches of the
@@ -45,7 +45,7 @@ How it is built:
 - [`build.yml`](.github/workflows/build.yml) runs daily at 06:30 UTC.
   [`scripts/resolve.py`](scripts/resolve.py) builds edge when either `edge` commit changed since
   the last build ([`state.json`](state.json)). It is built from source with the server's own
-  `Dockerfile`, then [`image/`](image) swaps in the light-follow frontend wheel and sets
+  `Dockerfile`, then [`image/`](image) swaps in the fork's frontend wheel and sets
   `MASS_APP_VARS_FILE`. The build fails if `app_secrets.json` shows up.
 - [`scripts/publish.py`](scripts/publish.py) renders [`template/`](template) into the channel's app
   folder with the new version and a changelog entry, and commits it. Edit the template, not the

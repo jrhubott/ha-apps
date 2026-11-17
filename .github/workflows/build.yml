@@ -1,6 +1,6 @@
 name: Build
 
-# Builds the light-follow Music Assistant edge image from the forks' `edge` branches and publishes
+# Builds the Music Assistant edge image from the forks' `edge` branches and publishes
 # the Home Assistant app. Runs after the forks' nightly sync merges upstream into edge (04:30/05:30 UTC).
 on:
   schedule:
