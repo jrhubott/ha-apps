@@ -31,14 +31,14 @@ It is a flat JSON object with only the keys you have, for example:
 
 The names are the ones in `APP_VAR_NAMES` in the server's
 `music_assistant/helpers/app_vars.py`. Restart the app after you change the file. A file with
-invalid JSON is ignored without an error.
+invalid JSON is ignored without an error, and so is a file in the official bundle's format (with
+`salt` and `secrets` keys): the bundle only works in official builds.
 
 ## Moving from the official app
 
 This app keeps its data apart from the official one. To bring your library and settings along,
-stop both apps, then on the host copy
-`/mnt/data/supervisor/addons/data/<hash>_music_assistant/` into this app's data folder before its
-first start.
+copy the official app's data folder (`/mnt/data/supervisor/apps/data/<hash>_music_assistant/`)
+into this app's data folder. The repository README has the commands.
 
 The Edge channel runs upstream's development branch and can migrate the database to a schema that
 stable releases cannot read. Copy data into Edge, never out of it.
