@@ -59,6 +59,47 @@ How it is built:
 - To build by hand, run **Build** from the Actions tab: pick a channel, and tick **force** to
   rebuild unchanged sources.
 
+### Copy data from another Music Assistant app
+
+Each app keeps its settings and library in its own `/data` folder, which is
+`/mnt/data/supervisor/addons/data/<slug>/` on the host. To move from the official app to one of
+these (or between channels), copy that folder from the
+[Advanced SSH & Web Terminal](https://github.com/hassio-addons/app-ssh) app with **protection
+mode** turned off, so it can run `docker`.
+
+Find the slugs with `ha apps list | grep -i music` (`ha addons list` on older versions), then:
+
+```bash
+SRC=d5369777_music_assistant
+DST=d4cd87db_music_assistant_lights
+DATA=/mnt/data/supervisor/addons/data
+
+ha apps stop $SRC; ha apps stop $DST
+
+# keep the target's current data, in case you want it back
+docker run --rm -v $DATA:/d alpine cp -a /d/$DST /d/$DST.before-copy
+
+# replace the target's data with the source's, leaving out caches the server rebuilds
+docker run --rm -v $DATA:/d alpine sh -c \
+  "rm -rf /d/$DST/* /d/$DST/.[!.]* && cp -a /d/$SRC/. /d/$DST/ && rm -rf /d/$DST/cache.db /d/$DST/.cache /d/$DST/collage_images"
+
+ha apps start $DST
+```
+
+- Copy only to the same or a newer version. An older server can't read a newer `library.db` or
+  `settings.json`, so beta data can't go back to stable.
+- The copy carries the source's server ID, provider logins and player settings. Keep the source
+  app stopped. If you run both, remove and re-add the second one in Home Assistant's Music
+  Assistant integration.
+- To undo, stop the target and put its old data back:
+
+  ```bash
+  docker run --rm -v $DATA:/d alpine sh -c "rm -rf /d/$DST && mv /d/$DST.before-copy /d/$DST"
+  ```
+
+  Once the target works, remove the copy with
+  `docker run --rm -v $DATA:/d alpine rm -rf /d/$DST.before-copy`.
+
 ## Adding an app
 
 Add a top-level folder with a `config.yaml` (unique `slug`), `DOCS.md`, `CHANGELOG.md`, `icon.png`
