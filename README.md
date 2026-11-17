@@ -70,7 +70,7 @@ mode** turned off, so it can run `docker`.
 Find the slugs with `ha apps list | grep -i music` (`ha addons list` on older versions), then:
 
 ```bash
-SRC=d5369777_music_assistant
+SRC=d5369777_music_assistant_dev
 DST=d4cd87db_music_assistant_lights_edge
 DATA=/mnt/data/supervisor/addons/data
 
