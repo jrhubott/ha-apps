@@ -1,0 +1,43 @@
+name: Lint
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  apps:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Find the app folders
+        id: apps
+        run: |
+          apps=$(find . -mindepth 2 -maxdepth 2 -name config.yaml -printf '%h\n' | sed 's|^\./||' | jq -Rnc '[inputs]')
+          echo "apps=$apps" >> "$GITHUB_OUTPUT"
+          echo "Apps: $apps"
+    outputs:
+      apps: ${{ steps.apps.outputs.apps }}
+
+  lint:
+    needs: apps
+    if: needs.apps.outputs.apps != '[]'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        app: ${{ fromJSON(needs.apps.outputs.apps) }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: frenck/action-addon-linter@d51677290aef26cdfc835271dd3c7343ce502809 # v2.21.2
+        with:
+          path: ./${{ matrix.app }}
+
+  scripts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Check the scripts compile
+        run: python3 -m py_compile scripts/*.py image/install_frontend.py
