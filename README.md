@@ -74,17 +74,23 @@ SRC=d5369777_music_assistant_dev
 DST=d4cd87db_music_assistant_lights_edge
 DATA=/mnt/data/supervisor/addons/data
 
+# both folders must be listed; if not, check the slugs and DATA before going on
+docker run --rm -v $DATA:/d alpine ls -la /d/$SRC /d/$DST
+
 ha apps stop $SRC; ha apps stop $DST
 
-# keep the target's current data, in case you want it back
-docker run --rm -v $DATA:/d alpine cp -a /d/$DST /d/$DST.before-copy
-
-# replace the target's data with the source's, leaving out caches the server rebuilds
+# copy the source next to the target, leaving out caches the server rebuilds
 docker run --rm -v $DATA:/d alpine sh -c \
-  "rm -rf /d/$DST/* /d/$DST/.[!.]* && cp -a /d/$SRC/. /d/$DST/ && rm -rf /d/$DST/cache.db /d/$DST/.cache /d/$DST/collage_images"
+  "cp -a /d/$SRC /d/$DST.new && rm -rf /d/$DST.new/cache.db /d/$DST.new/.cache /d/$DST.new/collage_images"
+
+# swap it in, keeping the target's old data as $DST.before-copy
+docker run --rm -v $DATA:/d alpine sh -c "mv /d/$DST /d/$DST.before-copy && mv /d/$DST.new /d/$DST"
 
 ha apps start $DST
 ```
+
+Nothing in the target is touched until the copy has finished, so a failed copy leaves only a
+`$DST.new` folder to delete.
 
 - Copy only to the same or a newer version. An older server can't read a newer `library.db` or
   `settings.json`, so beta data can't go back to stable.
