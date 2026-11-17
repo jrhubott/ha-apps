@@ -71,7 +71,7 @@ Find the slugs with `ha apps list | grep -i music` (`ha addons list` on older ve
 
 ```bash
 SRC=d5369777_music_assistant
-DST=d4cd87db_music_assistant_lights
+DST=d4cd87db_music_assistant_lights_edge
 DATA=/mnt/data/supervisor/addons/data
 
 ha apps stop $SRC; ha apps stop $DST
