@@ -61,30 +61,41 @@ How it is built:
 
 ### Copy data from another Music Assistant app
 
-Each app keeps its settings and library in its own `/data` folder, which is
-`/mnt/data/supervisor/addons/data/<slug>/` on the host. To move from the official app to one of
-these (or between channels), copy that folder from the
+Each app keeps its settings and library in its own `/data` folder, which lives on the host under
+a folder named after the app's slug. To move from the official app to one of these (or between
+channels), copy that folder from the
 [Advanced SSH & Web Terminal](https://github.com/hassio-addons/app-ssh) app with **protection
 mode** turned off, so it can run `docker`.
 
-Find the slugs with `ha apps list | grep -i music` (`ha addons list` on older versions), then:
+Find the slugs with `ha apps list | grep -i music` (`ha addons list` on older versions). The
+app containers are named `app_<slug>` (`addon_<slug>` on older versions); check with
+`docker ps -a --format '{{.Names}}' | grep -i music`.
+
+**1. Find the data folder.** Ask Docker where the target app's `/data` is on the host:
 
 ```bash
 SRC=d5369777_music_assistant_dev
 DST=d4cd87db_music_assistant_lights_edge
-DATA=/mnt/data/supervisor/addons/data
-
-# both folders must be listed; if not, check the slugs and DATA before going on
+DATA=$(dirname "$(docker inspect app_$DST --format '{{range .Mounts}}{{if eq .Destination "/data"}}{{.Source}}{{end}}{{end}}')")
+echo $DATA
 docker run --rm -v $DATA:/d alpine ls -la /d/$SRC /d/$DST
+```
 
+Go on only if both folders are listed, with `settings.json` in each. If not, fix the slugs or
+container name first.
+
+**2. Copy.** Each command checks the folders again and does nothing if one is missing:
+
+```bash
 ha apps stop $SRC; ha apps stop $DST
 
 # copy the source next to the target, leaving out caches the server rebuilds
-docker run --rm -v $DATA:/d alpine sh -c \
-  "cp -a /d/$SRC /d/$DST.new && rm -rf /d/$DST.new/cache.db /d/$DST.new/.cache /d/$DST.new/collage_images"
+docker run --rm -v $DATA:/d alpine sh -c "test -f /d/$SRC/settings.json && test -d /d/$DST && \
+  cp -a /d/$SRC /d/$DST.new && rm -rf /d/$DST.new/cache.db /d/$DST.new/.cache /d/$DST.new/collage_images"
 
 # swap it in, keeping the target's old data as $DST.before-copy
-docker run --rm -v $DATA:/d alpine sh -c "mv /d/$DST /d/$DST.before-copy && mv /d/$DST.new /d/$DST"
+docker run --rm -v $DATA:/d alpine sh -c "test -f /d/$DST.new/settings.json && \
+  mv /d/$DST /d/$DST.before-copy && mv /d/$DST.new /d/$DST"
 
 ha apps start $DST
 ```
