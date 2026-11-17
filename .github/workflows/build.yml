@@ -1,7 +1,7 @@
 name: Build
 
-# Builds the light-follow Music Assistant image of each channel from source and publishes the
-# matching Home Assistant app. Runs after the forks' nightly sync (04:30/05:30 UTC).
+# Builds the light-follow Music Assistant edge image from the forks' `edge` branches and publishes
+# the Home Assistant app. Runs after the forks' nightly sync merges upstream into edge (04:30/05:30 UTC).
 on:
   schedule:
     - cron: "30 6 * * *"
@@ -10,7 +10,7 @@ on:
       channel:
         description: Channel to build
         type: choice
-        options: [all, stable, beta, edge]
+        options: [all, edge]
         default: all
       force:
         description: Build even when the sources are unchanged

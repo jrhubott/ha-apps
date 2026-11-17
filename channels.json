@@ -4,22 +4,10 @@
   "server_fork": "jrhubott/music-assistant-server",
   "frontend_fork": "jrhubott/music-assistant-frontend",
   "edge": {
-    "server_branch": "feature/hue-grouped-follow",
-    "frontend_branch": "feature/light-followers"
+    "server_branch": "edge",
+    "frontend_branch": "edge"
   },
   "channels": {
-    "stable": {
-      "slug": "music_assistant_lights",
-      "name": "Music Assistant (light follow)",
-      "stage": "stable",
-      "base_image_key": "STABLE"
-    },
-    "beta": {
-      "slug": "music_assistant_lights_beta",
-      "name": "Music Assistant (light follow) Beta",
-      "stage": "experimental",
-      "base_image_key": "BETA"
-    },
     "edge": {
       "slug": "music_assistant_lights_edge",
       "name": "Music Assistant (light follow) Edge",
