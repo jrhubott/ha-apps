@@ -1,7 +1,8 @@
-# Music Assistant (light follow)
+# Music Assistant Edge (jrhubott)
 
 An unofficial build of the [Music Assistant](https://music-assistant.io) server with Hue lights
-that follow a speaker. It is built from source from the
+that follow a speaker and other features in progress. It is built from source from the `edge`
+branches of the
 [server](https://github.com/jrhubott/music-assistant-server) and
 [frontend](https://github.com/jrhubott/music-assistant-frontend) forks. Report problems with it
 there, not to the Music Assistant project.
@@ -12,7 +13,7 @@ Only run one Music Assistant app at a time: they all use the host network on por
 
 Official Music Assistant builds ship API keys for services such as Spotify, Qobuz, Tidal and
 Last.fm. Those keys are licensed only for the official builds, so this app does not include them.
-Put your own in this file, which every channel of this app reads:
+Put your own in this file:
 
 ```
 /share/music_assistant_dev/app_vars.json
@@ -40,5 +41,5 @@ This app keeps its data apart from the official one. To bring your library and s
 copy the official app's data folder (`/mnt/data/supervisor/apps/data/<hash>_music_assistant/`)
 into this app's data folder. The repository README has the commands.
 
-The Edge channel runs upstream's development branch and can migrate the database to a schema that
-stable releases cannot read. Copy data into Edge, never out of it.
+This app runs upstream's development branch and can migrate the database to a schema that
+stable releases cannot read. Copy data into it, never out of it.

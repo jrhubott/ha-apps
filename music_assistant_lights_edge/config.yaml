@@ -1,9 +1,10 @@
-name: "Music Assistant (light follow) Edge"
-version: "2.11.0.dev202611171437"
+name: "Music Assistant Edge (jrhubott)"
+version: "2.11.0.dev202611171550"
 slug: music_assistant_lights_edge
 description: >-
-  Music Assistant server with Hue lights that follow a speaker. Unofficial build from
-  jrhubott/music-assistant-server (feature/hue-grouped-follow).
+  Unofficial Music Assistant build: upstream development code plus jrhubott's feature
+  branches (Hue lights that follow a speaker, fixes in progress). Built from
+  jrhubott/music-assistant-server (edge).
 url: https://github.com/jrhubott/ha-apps
 arch:
   - amd64
