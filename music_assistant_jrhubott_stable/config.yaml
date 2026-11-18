@@ -1,0 +1,45 @@
+name: "Music Assistant Stable (jrhubott)"
+version: "2.10.12.post202611181428"
+slug: music_assistant_jrhubott_stable
+description: >-
+  Unofficial Music Assistant build: the latest upstream stable release plus jrhubott's stable-based fixes. Built from
+  jrhubott/music-assistant-server (stable).
+url: https://github.com/jrhubott/ha-apps
+arch:
+  - amd64
+  - aarch64
+homeassistant_api: true
+hassio_api: true
+hassio_role: manager
+discovery:
+  - music_assistant
+  - mcp
+auth_api: true
+host_network: true
+ingress: true
+ingress_port: 8094
+audio: true
+panel_icon: mdi:music-assistant
+panel_title: Music Assistant
+panel_admin: false
+map:
+  - media:rw
+  - ssl:ro
+  - share:ro
+init: false
+backup_exclude:
+  - cache.db
+  - collage_images/*
+  - .cache/*
+  - library.db.backup
+image: ghcr.io/jrhubott/music-assistant-lights
+tmpfs: true
+options:
+  log_level: info
+  safe_mode: false
+schema:
+  log_level: list(debug|info|warning|error)
+  safe_mode: bool
+privileged:
+  - SYS_ADMIN
+  - DAC_READ_SEARCH
