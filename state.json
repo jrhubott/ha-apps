@@ -1,8 +1,8 @@
 {
   "edge": {
-    "frontend_sha": "ba909c45619746df7771d5c254c692fe30256156",
-    "server_sha": "91c0e2eef7002f807096ac179b8fdf99d893a670",
-    "tag": "2.11.0.dev202611180002",
-    "version": "2.11.0.dev202611180002"
+    "frontend_sha": "4cec1f1240a3312392a2616b2951c931ade4d735",
+    "server_sha": "13eba7e043a631c428edd629b300785194305460",
+    "tag": "2.11.0.dev202611180513",
+    "version": "2.11.0.dev202611180513"
   }
 }

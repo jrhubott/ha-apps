@@ -1,9 +1,9 @@
 name: "Music Assistant Edge (jrhubott)"
-version: "2.11.0.dev202611180002"
+version: "2.11.0.dev202611180513"
 slug: music_assistant_lights_edge
 description: >-
   Unofficial Music Assistant build: upstream development code plus jrhubott's feature
-  branches (Hue lights that follow a speaker, fixes in progress). Built from
+  branches (fixes and features in progress). Built from
   jrhubott/music-assistant-server (edge).
 url: https://github.com/jrhubott/ha-apps
 arch:
