@@ -1,10 +1,11 @@
 name: Build
 
 # Builds the Music Assistant edge image from the forks' `edge` branches and publishes
-# the Home Assistant app. Runs after the forks' nightly sync merges upstream into edge (04:30/05:30 UTC).
+# the Home Assistant app. Runs hourly and builds only when an edge branch has a new commit, so it
+# picks up the forks' nightly sync and hand-made pushes to edge without depending on their timing.
 on:
   schedule:
-    - cron: "30 6 * * *"
+    - cron: "17 * * * *"
   workflow_dispatch:
     inputs:
       channel:
@@ -151,7 +152,7 @@ jobs:
           path: result/
 
   publish:
-    needs: build
+    needs: [resolve, build]
     if: ${{ !cancelled() && needs.build.result != 'skipped' }}
     runs-on: ubuntu-latest
     permissions:
@@ -166,9 +167,11 @@ jobs:
           pattern: result-*
           path: results
       - name: Publish the app versions
+        env:
+          MATRIX: ${{ needs.resolve.outputs.matrix }}
         run: |
           mkdir -p results
-          python3 scripts/publish.py results "$GITHUB_REPOSITORY"
+          python3 scripts/publish.py results "$GITHUB_REPOSITORY" "$MATRIX"
           git add -A
           if git diff --cached --quiet; then
             echo "Nothing to publish"
@@ -176,7 +179,8 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -q -m "Publish $(cd results && ls -d */ | tr -d / | sed 's/^result-//' | paste -sd, -)"
+          built=$(cd results && ls -d */ 2>/dev/null | tr -d / | sed 's/^result-//' | paste -sd, -)
+          git commit -q -m "${built:+Publish $built}${built:-Record a failed build}"
           for attempt in 1 2 3; do
             git push && exit 0
             git pull --rebase -q

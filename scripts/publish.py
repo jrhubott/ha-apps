@@ -2,6 +2,9 @@
 
 Reads one result JSON per built channel (the build matrix entry) from the directory given, renders
 template/ into <slug>/, adds a CHANGELOG entry and records the build in state.json.
+
+The optional third argument is the build matrix as JSON. A channel in it without a result failed;
+its commits are recorded under state.json "failed" so the hourly build doesn't retry them.
 """
 
 from __future__ import annotations
@@ -60,15 +63,23 @@ def render_app(cfg: dict, build: dict, repo: str) -> Path:
     return app
 
 
-def main(results_dir: str, repo: str) -> int:
+def main(results_dir: str, repo: str, attempted_json: str = "[]") -> int:
     cfg = json.loads((ROOT / "channels.json").read_text())
     state_file = ROOT / "state.json"
     state = json.loads(state_file.read_text()) if state_file.exists() else {}
     builds = [json.loads(p.read_text()) for p in sorted(Path(results_dir).glob("**/*.json"))]
-    if not builds:
-        print("No successful builds to publish")
-        return 0
+    built = {build["channel"] for build in builds}
+    failed = state.setdefault("failed", {})
+    for item in json.loads(attempted_json or "[]"):
+        if item["channel"] not in built:
+            failed[item["channel"]] = {
+                "server_sha": item["server_sha"],
+                "frontend_sha": item["frontend_sha"],
+                "at": f"{datetime.now(UTC):%Y-%m-%d %H:%M} UTC",
+            }
+            print(f"{item['channel']}: build failed; not retrying these commits")
     for build in builds:
+        failed.pop(build["channel"], None)
         app = render_app(cfg, build, repo)
         state[build["channel"]] = {
             "version": build["version"],
@@ -77,9 +88,11 @@ def main(results_dir: str, repo: str) -> int:
             "frontend_sha": build["frontend_sha"],
         }
         print(f"{build['channel']}: {app.name} is now {build['version']}")
+    if not failed:
+        del state["failed"]
     state_file.write_text(json.dumps(state, indent=2, sort_keys=True) + "\n")
     return 0
 
 
 if __name__ == "__main__":
-    sys.exit(main(sys.argv[1], sys.argv[2]))
+    sys.exit(main(*sys.argv[1:4]))

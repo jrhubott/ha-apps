@@ -42,7 +42,7 @@ documentation tab, or [template/DOCS.md](template/DOCS.md).
 How it is built:
 
 - The forks' nightly `fork-sync` run merges upstream into `edge` and tests it.
-- [`build.yml`](.github/workflows/build.yml) runs daily at 06:30 UTC.
+- [`build.yml`](.github/workflows/build.yml) runs hourly at :17 and builds only when an `edge` branch has a new commit. If a build fails, it is not retried for the same commits; a new commit on either `edge` branch, or a run with `force`, builds again.
   [`scripts/resolve.py`](scripts/resolve.py) builds edge when either `edge` commit changed since
   the last build ([`state.json`](state.json)). It is built from source with the server's own
   `Dockerfile`, then [`image/`](image) swaps in the fork's frontend wheel and sets

@@ -4,7 +4,9 @@ edge: the tips of the forks' `edge` branches (upstream dev/main plus the feature
 into them; the forks' nightly fork-sync run merges upstream in).
 
 The channel is built when its server or frontend commit differs from the last published build
-(state.json), or when --force is given.
+(state.json), or when --force is given. A pair of commits whose build failed (state.json "failed")
+is not retried: the build runs hourly, so retrying would fail and email every hour. A new commit on
+either edge branch, or --force, builds again.
 """
 
 from __future__ import annotations
@@ -111,6 +113,16 @@ def main() -> int:
         )
         if unchanged and not args.force:
             print(f"{channel}: {previous['version']} is current")
+            continue
+        failed = state.get("failed", {}).get(channel)
+        if (
+            failed
+            and failed.get("server_sha") == item["server_sha"]
+            and failed.get("frontend_sha") == item["frontend_sha"]
+            and not args.force
+        ):
+            print(f"{channel}: the build of these commits failed at {failed['at']}; "
+                  "waiting for a new commit (or run with force)")
             continue
         meta = cfg["channels"][channel]
         version = item["tag"]
