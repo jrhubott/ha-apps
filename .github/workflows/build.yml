@@ -184,7 +184,8 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           # one result file per built channel; a single artifact is unpacked without its folder
           built=$(find results -name '*.json' -exec basename {} .json \; | sort | paste -sd, -)
-          git commit -q -m "${built:+Publish $built}${built:-Record a failed build}"
+          if [ -n "$built" ]; then msg="Publish $built"; else msg="Record a failed build"; fi
+          git commit -q -m "$msg"
           for attempt in 1 2 3; do
             git push && exit 0
             git pull --rebase -q
