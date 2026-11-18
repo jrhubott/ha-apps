@@ -19,7 +19,7 @@ ARG FRONTEND_REF
 ARG SOURCE_URL
 LABEL \
     org.opencontainers.image.title="Music Assistant Server Edge (jrhubott)" \
-    org.opencontainers.image.description="Music Assistant server ${MASS_VERSION} with Hue lights that follow a speaker. Unofficial build without the bundled service credentials." \
+    org.opencontainers.image.description="Music Assistant server ${MASS_VERSION} with fixes and features in progress. Unofficial build without the bundled service credentials." \
     org.opencontainers.image.source="${SOURCE_URL}" \
     org.opencontainers.image.version="${APP_VERSION}" \
     org.opencontainers.image.authors="jrhubott" \

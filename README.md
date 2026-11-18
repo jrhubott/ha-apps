@@ -18,7 +18,7 @@ it from the repository URL), for example `d4cd87db_music_assistant_lights_edge`.
 
 | App | Folder | What it is |
 |---|---|---|
-| Music Assistant Edge (jrhubott) | `music_assistant_lights_edge` | Upstream Music Assistant `dev`/`main` plus the feature branches merged into the forks' `edge` branches (Hue lights that follow a speaker, fixes in progress) |
+| Music Assistant Edge (jrhubott) | `music_assistant_lights_edge` | Upstream Music Assistant `dev`/`main` plus the feature branches merged into the forks' `edge` branches (fixes and features in progress) |
 
 An app shows up in the store once its first image is built and its folder is committed.
 

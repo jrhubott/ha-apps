@@ -1,7 +1,7 @@
 # Music Assistant Edge (jrhubott)
 
-An unofficial build of the [Music Assistant](https://music-assistant.io) server with Hue lights
-that follow a speaker and other features in progress. It is built from source from the `edge`
+An unofficial build of the [Music Assistant](https://music-assistant.io) server with fixes and
+features in progress. It is built from source from the `edge`
 branches of the
 [server](https://github.com/jrhubott/music-assistant-server) and
 [frontend](https://github.com/jrhubott/music-assistant-frontend) forks. Report problems with it
