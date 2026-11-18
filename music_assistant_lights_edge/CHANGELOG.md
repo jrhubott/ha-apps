@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.11.0.dev202611180002
+
+Built 2026-11-18 00:18 UTC from:
+
+- server [`edge`](https://github.com/jrhubott/music-assistant-server/tree/91c0e2eef7002f807096ac179b8fdf99d893a670) (91c0e2eef)
+- frontend [`edge`](https://github.com/jrhubott/music-assistant-frontend/tree/ba909c45619746df7771d5c254c692fe30256156) (ba909c456)
+
 ## 2.11.0.dev202611171550
 
 Built 2026-11-17 16:13 UTC from:
