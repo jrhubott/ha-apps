@@ -12,20 +12,22 @@ RUN python /tmp/frontend/install_frontend.py /tmp/frontend \
 ENV MASS_APP_VARS_FILE=/share/music_assistant_dev/app_vars.json
 
 ARG APP_VERSION
+ARG APP_NAME
+ARG APP_SUMMARY
 ARG MASS_VERSION
 ARG CHANNEL
 ARG SERVER_REF
 ARG FRONTEND_REF
 ARG SOURCE_URL
 LABEL \
-    org.opencontainers.image.title="Music Assistant Server Edge (jrhubott)" \
-    org.opencontainers.image.description="Music Assistant server ${MASS_VERSION} with fixes and features in progress. Unofficial build without the bundled service credentials." \
+    org.opencontainers.image.title="${APP_NAME}" \
+    org.opencontainers.image.description="Music Assistant server ${MASS_VERSION}: ${APP_SUMMARY}. Unofficial build without the bundled service credentials." \
     org.opencontainers.image.source="${SOURCE_URL}" \
     org.opencontainers.image.version="${APP_VERSION}" \
     org.opencontainers.image.authors="jrhubott" \
     io.hass.version="${APP_VERSION}" \
-    io.hass.name="Music Assistant Edge (jrhubott)" \
-    io.hass.description="Music Assistant dev plus jrhubott's merged feature branches" \
+    io.hass.name="${APP_NAME}" \
+    io.hass.description="${APP_SUMMARY}" \
     io.github.ha-apps.channel="${CHANNEL}" \
     io.github.ha-apps.server-ref="${SERVER_REF}" \
     io.github.ha-apps.frontend-ref="${FRONTEND_REF}"

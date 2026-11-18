@@ -24,7 +24,7 @@ def render_app(cfg: dict, build: dict, repo: str) -> Path:
     app = ROOT / meta["slug"]
     app.mkdir(exist_ok=True)
     for item in TEMPLATE.iterdir():
-        if item.name == "config.yaml.tmpl":
+        if item.suffix == ".tmpl":
             continue
         target = app / item.name
         if item.is_dir():
@@ -35,13 +35,26 @@ def render_app(cfg: dict, build: dict, repo: str) -> Path:
         name=meta["name"],
         version=build["version"],
         slug=meta["slug"],
-        stage=meta["stage"],
+        # "stable" is the default stage, and the app linter rejects a repeated default
+        stage_line="" if meta["stage"] == "stable" else f"stage: {meta['stage']}\n",
         image=build["image"],
         server_fork=build["server_repo"],
         server_ref=build["server_branch"],
+        summary=meta["summary"],
         repo=repo,
     )
     (app / "config.yaml").write_text(config)
+    # DOCS.md has JSON braces in it, so it uses @KEY@ placeholders instead of str.format
+    docs = (TEMPLATE / "DOCS.md.tmpl").read_text()
+    for key, value in {
+        "NAME": meta["name"],
+        "SUMMARY": meta["summary"],
+        "BRANCH": meta["server_branch"],
+        "SOURCE": meta["source"],
+        "DATA_NOTE": meta["data_note"],
+    }.items():
+        docs = docs.replace(f"@{key}@", value)
+    (app / "DOCS.md").write_text(docs)
 
     changelog = app / "CHANGELOG.md"
     old = changelog.read_text() if changelog.exists() else "# Changelog\n"
@@ -54,10 +67,10 @@ def render_app(cfg: dict, build: dict, repo: str) -> Path:
         f"- frontend [`{build['frontend_branch']}`](https://github.com/{build['frontend_repo']}/tree/"
         f"{build['frontend_sha']}) ({build['frontend_sha'][:9]})\n"
     )
-    if build["channel"] != "edge":
+    if build.get("upstream_release"):
         entry += (
             f"\nUpstream release notes: https://github.com/music-assistant/server/releases/tag/"
-            f"{build['tag']}\n"
+            f"{build['upstream_release']}\n"
         )
     changelog.write_text(header + "\n" + entry + rest)
     return app

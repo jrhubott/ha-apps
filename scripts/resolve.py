@@ -1,12 +1,19 @@
-"""Decide whether the edge channel needs a new image and print the build matrix.
+"""Decide which channels need a new image and print the build matrix.
 
-edge: the tips of the forks' `edge` branches (upstream dev/main plus the feature branches merged
-into them; the forks' nightly fork-sync run merges upstream in).
+Each channel in channels.json builds the tips of a branch of the server and frontend forks:
 
-The channel is built when its server or frontend commit differs from the last published build
+- edge: the forks' `edge` branches (upstream dev/main plus the feature branches merged into them).
+  Versions are the upstream nightly base plus the build time: 2.11.0.dev202611170630.
+- stable: the forks' `stable` branches (upstream stable plus stable-based fixes). Versions are the
+  latest upstream release plus the build time: 2.10.12.post202611170630. Not `.dev`: a stable
+  server with a `.dev` version points its dashboards at the nightly web frontend.
+
+The forks' nightly fork-sync run merges upstream into both branches.
+
+A channel is built when its server or frontend commit differs from the last published build
 (state.json), or when --force is given. A pair of commits whose build failed (state.json "failed")
 is not retried: the build runs hourly, so retrying would fail and email every hour. A new commit on
-either edge branch, or --force, builds again.
+either branch, or --force, builds again.
 """
 
 from __future__ import annotations
@@ -56,6 +63,16 @@ def upstream_nightly(repo: str) -> str | None:
     return next((r["tag_name"] for r in rels if ".dev" in r["tag_name"]), None)
 
 
+def upstream_release(repo: str) -> str | None:
+    """Return upstream's latest stable release tag."""
+    try:
+        return api(f"/repos/{repo}/releases/latest")["tag_name"]
+    except urllib.error.HTTPError as err:
+        if err.code == 404:
+            return None
+        raise
+
+
 def base_image_version(repo: str, sha: str, key: str) -> str:
     workflow = file_at(repo, sha, ".github/workflows/release.yml")
     for name in (key, "STABLE"):
@@ -69,36 +86,47 @@ def base_image_version(repo: str, sha: str, key: str) -> str:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--channel", default="all", choices=["all", "edge"])
+    cfg = json.loads((ROOT / "channels.json").read_text())
+    parser.add_argument("--channel", default="all", choices=["all", *cfg["channels"]])
     parser.add_argument("--force", action="store_true")
     args = parser.parse_args()
 
-    cfg = json.loads((ROOT / "channels.json").read_text())
     state_file = ROOT / "state.json"
     state = json.loads(state_file.read_text()) if state_file.exists() else {}
     server_fork, frontend_fork = cfg["server_fork"], cfg["frontend_fork"]
-    nightly = upstream_nightly(cfg["upstream_server"])
+    built_at = f"{datetime.now(UTC):%Y%m%d%H%M}"
+    bases: dict[str, str | None] = {}
 
     candidates: list[dict] = []
-    edge = cfg["edge"]
-    server_sha = branch_sha(server_fork, edge["server_branch"])
-    frontend_sha = branch_sha(frontend_fork, edge["frontend_branch"])
-    if server_sha and frontend_sha and nightly:
-        base = nightly.split(".dev")[0]
-        version = f"{base}.dev{datetime.now(UTC):%Y%m%d%H%M}"
+    for channel, meta in cfg["channels"].items():
+        if args.channel not in ("all", channel):
+            continue
+        kind = meta["version_base"]
+        if kind not in bases:
+            if kind == "nightly":
+                nightly = upstream_nightly(cfg["upstream_server"])
+                bases[kind] = nightly.split(".dev")[0] if nightly else None
+            else:
+                bases[kind] = upstream_release(cfg["upstream_server"])
+        base = bases[kind]
+        server_sha = branch_sha(server_fork, meta["server_branch"])
+        frontend_sha = branch_sha(frontend_fork, meta["frontend_branch"])
+        if not (server_sha and frontend_sha and base):
+            print(f"{channel}: a fork branch or the upstream {kind} version is missing")
+            continue
+        version = f"{base}.dev{built_at}" if kind == "nightly" else f"{base}.post{built_at}"
         candidates.append(
             {
-                "channel": "edge",
+                "channel": channel,
                 "tag": version,
-                "server_branch": edge["server_branch"],
+                "upstream_release": base if kind == "release" else "",
+                "server_branch": meta["server_branch"],
                 "server_sha": server_sha,
-                "frontend_branch": edge["frontend_branch"],
+                "frontend_branch": meta["frontend_branch"],
                 "frontend_sha": frontend_sha,
                 "frontend_version": version,
             }
         )
-    else:
-        print("edge: an edge branch or the upstream nightly is missing")
 
     matrix: list[dict] = []
     for item in candidates:
@@ -132,6 +160,8 @@ def main() -> int:
                 "version": version,
                 "mass_version": item["tag"],
                 "slug": meta["slug"],
+                "name": meta["name"],
+                "summary": meta["summary"],
                 "base_image_version": base_image_version(
                     server_fork, item["server_sha"], meta["base_image_key"]
                 ),

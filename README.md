@@ -19,6 +19,7 @@ it from the repository URL), for example `d4cd87db_music_assistant_lights_edge`.
 | App | Folder | What it is |
 |---|---|---|
 | Music Assistant Edge (jrhubott) | `music_assistant_lights_edge` | Upstream Music Assistant `dev`/`main` plus the feature branches merged into the forks' `edge` branches (fixes and features in progress) |
+| Music Assistant Stable (jrhubott) | `music_assistant_jrhubott_stable` | Upstream Music Assistant `stable` (the latest release plus backports about to be released) plus the stable-based fixes merged into the forks' `stable` branches |
 
 An app shows up in the store once its first image is built and its folder is committed.
 
@@ -33,7 +34,17 @@ the forks' nightly `fork-sync` run merges upstream in and tests it. Run only one
 app at a time: they all use the host network on ports 8095 and 8094. Versions look like
 `2.11.0.dev202611170630` (upstream nightly base plus build time).
 
-The full setup, including how to add a feature to `edge`, is documented on the BookStack page
+## Music Assistant Stable (jrhubott)
+
+The same, built from the forks' `stable` branches: upstream `stable` plus stable-based ports of
+features, merged in by hand. The same nightly `fork-sync` run merges upstream `stable` in. Versions
+look like `2.10.12.post202611181417` (the latest upstream release plus build time). They are not
+`.dev` versions, because a stable server with a `.dev` version points its dashboards at the
+nightly web frontend.
+
+## Both apps
+
+The full setup, including how to add a feature to `edge` or `stable`, is documented on the BookStack page
 "Music Assistant forks: edge branch and ha-apps", which is the record of truth.
 
 Service credentials go in `/share/music_assistant_dev/app_vars.json`. Source builds do not contain the official bundled credentials. See an app's
@@ -41,19 +52,20 @@ documentation tab, or [template/DOCS.md](template/DOCS.md).
 
 How it is built:
 
-- The forks' nightly `fork-sync` run merges upstream into `edge` and tests it.
-- [`build.yml`](.github/workflows/build.yml) runs hourly at :17 and builds only when an `edge` branch has a new commit. If a build fails, it is not retried for the same commits; a new commit on either `edge` branch, or a run with `force`, builds again.
-  [`scripts/resolve.py`](scripts/resolve.py) builds edge when either `edge` commit changed since
-  the last build ([`state.json`](state.json)). It is built from source with the server's own
+- The forks' nightly `fork-sync` run merges upstream into `edge` and `stable` and tests them.
+- [`build.yml`](.github/workflows/build.yml) runs hourly at :17 and builds a channel only when one of its branches has a new commit. If a build fails, it is not retried for the same commits; a new commit on either branch of that channel, or a run with `force`, builds again.
+  [`scripts/resolve.py`](scripts/resolve.py) builds a channel when its server or frontend commit
+  changed since the last build ([`state.json`](state.json)). Each channel's base image is the one
+  upstream's `release.yml` names for it (`NIGHTLY` for edge, `STABLE` for stable). It is built from source with the server's own
   `Dockerfile`, then [`image/`](image) swaps in the fork's frontend wheel and sets
   `MASS_APP_VARS_FILE`. The build fails if `app_secrets.json` shows up.
 - [`scripts/publish.py`](scripts/publish.py) renders [`template/`](template) into the channel's app
   folder with the new version and a changelog entry, and commits it. Edit the template, not the
   generated folders.
-- [`channels.json`](channels.json) holds the forks, the edge branches, the image name and the
-  app's slug.
+- [`channels.json`](channels.json) holds the forks, the image name, and per channel the branches,
+  the app's slug, name and texts. `template/DOCS.md.tmpl` uses `@KEY@` placeholders filled from it.
 - To build by hand, run **Build** from the Actions tab (tick **force** to rebuild unchanged
-  sources), or `gh workflow run build.yml -R jrhubott/ha-apps -f channel=edge`.
+  sources), or `gh workflow run build.yml -R jrhubott/ha-apps -f channel=edge` (or `channel=stable`).
 
 ### Copy data from another Music Assistant app
 
@@ -104,7 +116,8 @@ Nothing in the target is touched until the copy has finished, so a failed copy l
 `$DST.new` folder to delete.
 
 - Copy only to the same or a newer version. An older server can't read a newer `library.db` or
-  `settings.json`, so edge data can't go back to a stable release.
+  `settings.json`, so edge data can't go back to a stable release, and can't be copied into the
+  Stable app.
 - The copy carries the source's server ID, provider logins and player settings. Keep the source
   app stopped. If you run both, remove and re-add the second one in Home Assistant's Music
   Assistant integration.

@@ -1,8 +1,9 @@
 name: Build
 
-# Builds the Music Assistant edge image from the forks' `edge` branches and publishes
-# the Home Assistant app. Runs hourly and builds only when an edge branch has a new commit, so it
-# picks up the forks' nightly sync and hand-made pushes to edge without depending on their timing.
+# Builds the Music Assistant images from the forks' `edge` and `stable` branches and publishes
+# the Home Assistant apps. Runs hourly and builds a channel only when one of its branches has a new
+# commit, so it picks up the forks' nightly sync and hand-made pushes without depending on their
+# timing.
 on:
   schedule:
     - cron: "17 * * * *"
@@ -11,7 +12,7 @@ on:
       channel:
         description: Channel to build
         type: choice
-        options: [all, edge]
+        options: [all, edge, stable]
         default: all
       force:
         description: Build even when the sources are unchanged
@@ -128,6 +129,8 @@ jobs:
           IMAGE: ${{ matrix.image }}
           CHANNEL: ${{ matrix.channel }}
           APP_VERSION: ${{ matrix.version }}
+          APP_NAME: ${{ matrix.name }}
+          APP_SUMMARY: ${{ matrix.summary }}
           MASS_VERSION: ${{ matrix.mass_version }}
           MASS_REVISION: ${{ matrix.server_sha }}
           BASE_IMAGE_VERSION: ${{ matrix.base_image_version }}

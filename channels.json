@@ -3,16 +3,30 @@
   "upstream_server": "music-assistant/server",
   "server_fork": "jrhubott/music-assistant-server",
   "frontend_fork": "jrhubott/music-assistant-frontend",
-  "edge": {
-    "server_branch": "edge",
-    "frontend_branch": "edge"
-  },
   "channels": {
     "edge": {
       "slug": "music_assistant_lights_edge",
       "name": "Music Assistant Edge (jrhubott)",
       "stage": "experimental",
-      "base_image_key": "NIGHTLY"
+      "base_image_key": "NIGHTLY",
+      "server_branch": "edge",
+      "frontend_branch": "edge",
+      "version_base": "nightly",
+      "summary": "upstream development code plus jrhubott's feature branches (fixes and features in progress)",
+      "source": "upstream's development branch (server `dev`, frontend `main`)",
+      "data_note": "This app runs upstream's development branch and can migrate the database to a schema that stable releases cannot read. Copy data into it, never out of it."
+    },
+    "stable": {
+      "slug": "music_assistant_jrhubott_stable",
+      "name": "Music Assistant Stable (jrhubott)",
+      "stage": "stable",
+      "base_image_key": "STABLE",
+      "server_branch": "stable",
+      "frontend_branch": "stable",
+      "version_base": "release",
+      "summary": "the latest upstream stable release plus jrhubott's stable-based fixes",
+      "source": "upstream's `stable` branch (the latest release plus backports about to be released)",
+      "data_note": "This app runs upstream's stable branch. You can copy data into it from the official app or another app on the same stable version, but not from Edge: edge data can have a newer schema."
     }
   }
 }

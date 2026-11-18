@@ -4,6 +4,8 @@
 variable "IMAGE" {}
 variable "CHANNEL" {}
 variable "APP_VERSION" {}
+variable "APP_NAME" {}
+variable "APP_SUMMARY" {}
 variable "MASS_VERSION" {}
 variable "MASS_REVISION" {}
 variable "BASE_IMAGE_VERSION" {}
@@ -32,6 +34,8 @@ target "app" {
   platforms = ["linux/amd64", "linux/arm64"]
   args = {
     APP_VERSION  = APP_VERSION
+    APP_NAME     = APP_NAME
+    APP_SUMMARY  = APP_SUMMARY
     MASS_VERSION = MASS_VERSION
     CHANNEL      = CHANNEL
     SERVER_REF   = SERVER_REF

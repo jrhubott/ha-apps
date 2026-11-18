@@ -2,8 +2,7 @@ name: "{name}"
 version: "{version}"
 slug: {slug}
 description: >-
-  Unofficial Music Assistant build: upstream development code plus jrhubott's feature
-  branches (fixes and features in progress). Built from
+  Unofficial Music Assistant build: {summary}. Built from
   {server_fork} ({server_ref}).
 url: https://github.com/{repo}
 arch:
@@ -33,8 +32,7 @@ backup_exclude:
   - collage_images/*
   - .cache/*
   - library.db.backup
-stage: {stage}
-image: {image}
+{stage_line}image: {image}
 tmpfs: true
 options:
   log_level: info
