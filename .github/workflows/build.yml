@@ -182,7 +182,8 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          built=$(cd results && ls -d */ 2>/dev/null | tr -d / | sed 's/^result-//' | paste -sd, -)
+          # one result file per built channel; a single artifact is unpacked without its folder
+          built=$(find results -name '*.json' -exec basename {} .json \; | sort | paste -sd, -)
           git commit -q -m "${built:+Publish $built}${built:-Record a failed build}"
           for attempt in 1 2 3; do
             git push && exit 0
