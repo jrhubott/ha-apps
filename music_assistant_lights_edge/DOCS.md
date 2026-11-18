@@ -1,10 +1,10 @@
 # Music Assistant Edge (jrhubott)
 
-An unofficial build of the [Music Assistant](https://music-assistant.io) server with fixes and
-features in progress. It is built from source from the `edge`
-branches of the
+An unofficial build of the [Music Assistant](https://music-assistant.io) server: upstream development code plus jrhubott's feature branches (fixes and features in progress).
+It is built from source from the `edge` branches of the
 [server](https://github.com/jrhubott/music-assistant-server) and
-[frontend](https://github.com/jrhubott/music-assistant-frontend) forks. Report problems with it
+[frontend](https://github.com/jrhubott/music-assistant-frontend) forks, which follow
+upstream's development branch (server `dev`, frontend `main`). Report problems with it
 there, not to the Music Assistant project.
 
 Only run one Music Assistant app at a time: they all use the host network on ports 8095 and 8094.
@@ -41,5 +41,4 @@ This app keeps its data apart from the official one. To bring your library and s
 copy the official app's data folder (`/mnt/data/supervisor/apps/data/<hash>_music_assistant/`)
 into this app's data folder. The repository README has the commands.
 
-This app runs upstream's development branch and can migrate the database to a schema that
-stable releases cannot read. Copy data into it, never out of it.
+This app runs upstream's development branch and can migrate the database to a schema that stable releases cannot read. Copy data into it, never out of it.
