@@ -1,5 +1,20 @@
 # Changelog
 
+## 2.10.12.post202611191605
+
+Built 2026-11-19 16:23 UTC from:
+
+- server [`stable`](https://github.com/jrhubott/music-assistant-server/tree/bef82530e2bff150f5ecf70d217ae065adc619ee) (bef82530e)
+- frontend [`stable`](https://github.com/jrhubott/music-assistant-frontend/tree/a622edcb6d31af88642f9a8bbbe64a1678b38ba4) (a622edcb6)
+
+Upstream release notes: https://github.com/music-assistant/server/releases/tag/2.10.12
+
+### Server: no new commits
+
+### Frontend: 1 new commit ([compare](https://github.com/jrhubott/music-assistant-frontend/compare/4318416bb24a...a622edcb6d31))
+
+- [Backport to stable] 2.17.297.post4 (#3249) ([8710763](https://github.com/jrhubott/music-assistant-frontend/commit/871076355b19c6c96f5dd38fef7147cff40bba8c))
+
 ## 2.10.12.post202611191302
 
 Built 2026-11-19 13:21 UTC from:

@@ -1,5 +1,71 @@
 # Changelog
 
+## 2.11.0.dev202611191605
+
+Built 2026-11-19 16:23 UTC from:
+
+- server [`edge`](https://github.com/jrhubott/music-assistant-server/tree/18e180904469d49093ac913857501a2965c4bcac) (18e180904)
+- frontend [`edge`](https://github.com/jrhubott/music-assistant-frontend/tree/458548af4979d032bc8bfe5716c7605e9f4a3d41) (458548af4)
+
+### Server: 52 new commits ([compare](https://github.com/jrhubott/music-assistant-server/compare/debde5ce9679...18e180904469))
+
+- Party: add a TV link that shows the dashboard without signing in ([8818815](https://github.com/jrhubott/music-assistant-server/commit/88188151c2b248d83d76781f6182eb07926291a8))
+- Give the follow handler tests' stub provider the sources a config update reads ([df61055](https://github.com/jrhubott/music-assistant-server/commit/df61055b318d5af64220b435cff35e36ea66586e))
+- Add guest nicknames, shout-outs, reactions and a DJ leaderboard to the party plugin ([7d865c1](https://github.com/jrhubott/music-assistant-server/commit/7d865c16a9fdd238d73cc83e261ae312ca1107ff))
+- Pick the models while adding OpenAI Compatible (#7958) ([26b876e](https://github.com/jrhubott/music-assistant-server/commit/26b876e196405854e26a259b2cf417fe5bd0d274))
+- Forget a Sendspin device's pairing when its player is removed (#7773) ([3182337](https://github.com/jrhubott/music-assistant-server/commit/3182337bd96e585c39b0213bb75f01dda89fe85b))
+- Keep the queue on the new track after Next while the player still reports the old stream (#7955) ([b0553f8](https://github.com/jrhubott/music-assistant-server/commit/b0553f8969459cdf72c79c8ffe6616c5ec7e3347))
+- Keep the duplicate album check from freezing a library with many same-title albums (#7956) ([d62d4d5](https://github.com/jrhubott/music-assistant-server/commit/d62d4d5235dfb8ed0c28c2db97179e85e8d1748b))
+- Show a connection error instead of "no libraries" when Plex setup cannot reach the server (#7957) ([7500276](https://github.com/jrhubott/music-assistant-server/commit/75002764e5865942053d2c4fc4e3d887e41080b4))
+- Stop playback when a music service gives no audio for three tracks in a row (#7945) ([92442c0](https://github.com/jrhubott/music-assistant-server/commit/92442c094382aa1ff5d3b898022575195afd6bc9))
+- Add Jellyfin playlist track editing (#7896) ([31a9e32](https://github.com/jrhubott/music-assistant-server/commit/31a9e32aa6230a4b8ee24f9ac6bf8f41f6dec9fb))
+- Narrow broad exception handlers in AriaCast Receiver (BLE001) (#7953) ([fad7b80](https://github.com/jrhubott/music-assistant-server/commit/fad7b80504144030bbc2426181bcad829b91d2bb))
+- Pair Sendspin players on the Home Assistant host with their local token (#7371) ([ce4f033](https://github.com/jrhubott/music-assistant-server/commit/ce4f0334a0a638d33fb6571e504157393a2fcbbb))
+- Keep AirPlay speakers with another sender after it takes them over from a Sendspin group (#7952) ([951e22e](https://github.com/jrhubott/music-assistant-server/commit/951e22e60cc44a05c8cde58b003cb09dd3809343))
+- Add lyrics support for Jellyfin provider (#7933) ([8fb733a](https://github.com/jrhubott/music-assistant-server/commit/8fb733a1f0953a7d306b59a91402428a4a8b5d21))
+- Add Title Reveal game to Music Quiz (#7852) ([d44cd8d](https://github.com/jrhubott/music-assistant-server/commit/d44cd8d752e02efb7108c6254451467b99a88b09))
+- Narrow exception handling in Playlist Metadata (#7929) ([68a68ac](https://github.com/jrhubott/music-assistant-server/commit/68a68acee62cf5b0ba982c0e81692973c59daa79))
+- Narrow exception handling in Smart Playlist (#7924) ([4d0ded3](https://github.com/jrhubott/music-assistant-server/commit/4d0ded379417fb9a7b6267ea9eca9e641eeb801a))
+- Use lazy log arguments in the remaining providers and turn on the G004 lint rule (#7914) ([c226587](https://github.com/jrhubott/music-assistant-server/commit/c226587de2070caeb2aaa28691c42241221fa7f4))
+- Allow source-sharing clients to request guest recipients (#7849) ([6721e27](https://github.com/jrhubott/music-assistant-server/commit/6721e27f7abdcc8d79e667ac97cf9b7cde13da3e))
+- Let Discover rows hide fully played episodes and audiobooks (#7898) ([63130f9](https://github.com/jrhubott/music-assistant-server/commit/63130f9912a49ab614831d2853cb7ef7bb75d59d))
+- Start checking broad error catches, first batch of providers (#7921) ([10e16dc](https://github.com/jrhubott/music-assistant-server/commit/10e16dcaa9fbf64f2971b1db8e699419322d4f29))
+- ⬆️ Update music-assistant-models to 1.1.247 (#7949) ([222258c](https://github.com/jrhubott/music-assistant-server/commit/222258c92f0291139be159d2c33be83a23e72ed2))
+- Subsonic: use sonicSimilarity for similar tracks (#7931) ([3a6a60b](https://github.com/jrhubott/music-assistant-server/commit/3a6a60b94da9124f92698de5e943d54013b070da))
+- ⬆️ Update music-assistant-frontend to 2.17.375 (#7948) ([498d7a4](https://github.com/jrhubott/music-assistant-server/commit/498d7a4dda1dda5f2029668e8936da942eb5ff47))
+- Fetch missing 'now playing' metadata images from Spotify oEmbed API for BBC Sounds (#7883) ([c50632b](https://github.com/jrhubott/music-assistant-server/commit/c50632bd235d8d21f28a80fb6e6e87c765494d3b))
+- Narrow BookOrbit broad exception handlers for BLE001 (#7928) ([0d8b2dd](https://github.com/jrhubott/music-assistant-server/commit/0d8b2dd0ce8a78ce952e49566699fb7e410e5777))
+- Clearer texts around community providers (#7944) ([847926d](https://github.com/jrhubott/music-assistant-server/commit/847926d6293f667dec340772005e7b0ccafcbeb8))
+- Run a provider from its provider or providers folder in dev mode (#7946) ([126c6d6](https://github.com/jrhubott/music-assistant-server/commit/126c6d646ec14ee680e7051258e82dab0a09bac2))
+- Explain both routes to someone adding a provider (#7943) ([f3566b2](https://github.com/jrhubott/music-assistant-server/commit/f3566b271fdb2ec0ce1c9b3761f6322363ba166b))
+- Let music providers say in their manifest what they offer (#7930) ([451ff48](https://github.com/jrhubott/music-assistant-server/commit/451ff4883141af652101160ae62672ed5d3a8028))
+- Show the position in the track on a squeezelite speaker in a Sendspin group (#7942) ([f088901](https://github.com/jrhubott/music-assistant-server/commit/f088901a2fc47cb5161f3bb755d18945b26f7188))
+- Read the AirPlay session and stream settings through the player (#7932) ([37d3d8e](https://github.com/jrhubott/music-assistant-server/commit/37d3d8eeabcd264bfc1bc59e90376b2bf1487674))
+- Fix a DLNA error at startup for Sonos stereo pairs (#7935) ([dd67435](https://github.com/jrhubott/music-assistant-server/commit/dd67435d1d38048a7e506790f874ad360dda9d88))
+- Make the Raumfeld player tests pass in any order (#7940) ([32de8c7](https://github.com/jrhubott/music-assistant-server/commit/32de8c743d19e691ee6baf8ee94aeb38e005370e))
+- Play a Sendspin device's line-in without a separate plugin (#7909) ([05f89e6](https://github.com/jrhubott/music-assistant-server/commit/05f89e6823b97e2c5dc26a643b84f334d986cd77))
+- Don't treat Sendspin remotes, artwork screens and lights as speakers (#7882) ([6e87e46](https://github.com/jrhubott/music-assistant-server/commit/6e87e463b9e4239ac6627d5a91f088382f446401))
+- Show the repeat and shuffle of the queue on Squeezebox and squeezelite players (#7934) ([a2abfe6](https://github.com/jrhubott/music-assistant-server/commit/a2abfe682078c8fb51b3273a6d3f8741a6b2aeab))
+- Group the crossfade, volume normalization and self-registration settings by what they do (#7889) ([3cc9d30](https://github.com/jrhubott/music-assistant-server/commit/3cc9d3085572cbbdcbe8dbdd19e9396afce1af07))
+- Let a provider serve a page of its own, listed in the app's menu (#7910) ([629ce2e](https://github.com/jrhubott/music-assistant-server/commit/629ce2eb997784584d0288dbcf295f1a7a3d30b6))
+- Let a speaker keep its music service stream when it moves to the next track (#7870) ([c6dfc87](https://github.com/jrhubott/music-assistant-server/commit/c6dfc87a0e86a5fa10d49ee3e389dff8b0e72ad6))
+- …and more, see the compare link
+
+### Frontend: 12 new commits ([compare](https://github.com/jrhubott/music-assistant-frontend/compare/967425ccb219...458548af4979))
+
+- Add guest nicknames, shout-outs, reactions and a DJ leaderboard to the party screen ([19eed8e](https://github.com/jrhubott/music-assistant-frontend/commit/19eed8ed737617b79088793e29519b49c5452985))
+- Hide fully played episodes on the Latest podcast episodes row (#3233) ([144001b](https://github.com/jrhubott/music-assistant-frontend/commit/144001bde874993c8dd44daf24cb4d2a4916f261))
+- Show controllers in their own section on the Players page (#3252) ([b582530](https://github.com/jrhubott/music-assistant-frontend/commit/b582530da5b739e14d4173c78e603fcb77f62042))
+- Use the shared settings card for the links on a player's page (#3251) ([4b91746](https://github.com/jrhubott/music-assistant-frontend/commit/4b91746b6ad10f301aebd11822ca8f871075fcaa))
+- Simplify the provider lists to one list per settings page (#3250) ([fc72a49](https://github.com/jrhubott/music-assistant-frontend/commit/fc72a491231c96c4cbc4b6b0786d221e8f53dafd))
+- Game interface for Title Reveal game in Music Quiz (#3220) ([b70c16b](https://github.com/jrhubott/music-assistant-frontend/commit/b70c16bf27e6c51b67a0bdb039d91721d87e1874))
+- Show what each music source offers, with live sources in the same list (#3245) ([e758762](https://github.com/jrhubott/music-assistant-frontend/commit/e758762e27e6b372d33703ebabd682ab8176230c))
+- Give every settings page the same header (#3244) ([74b7ce5](https://github.com/jrhubott/music-assistant-frontend/commit/74b7ce5d4866186d6867ff30dda2b8e23a69b71e))
+- Give every settings page an address of its own (#3243) ([02335a4](https://github.com/jrhubott/music-assistant-frontend/commit/02335a4f50938d9a9f56df324f74afc42f6e650b))
+- Rework the Profile page around your theme, language and personal settings (#3227) ([86f18b6](https://github.com/jrhubott/music-assistant-frontend/commit/86f18b6340a46252e352bac6060e500c307d2b17))
+- Music, Players and System as hub pages, with audio sources under Music (#3236) ([d529814](https://github.com/jrhubott/music-assistant-frontend/commit/d529814a6b6ea61e1550930a7ebf722386b84c21))
+- Give Home Assistant its own settings page (#3234) ([59af737](https://github.com/jrhubott/music-assistant-frontend/commit/59af7379dd6ab3834d9283cec73e8dfb6ac0e6a8))
+
 ## 2.11.0.dev202611191302
 
 Built 2026-11-19 13:21 UTC from:

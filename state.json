@@ -1,14 +1,14 @@
 {
   "edge": {
-    "frontend_sha": "967425ccb219e4cf5517be928fa00e741be953ab",
-    "server_sha": "debde5ce96798f40dbc42db10b8803193c29f588",
-    "tag": "2.11.0.dev202611191302",
-    "version": "2.11.0.dev202611191302"
+    "frontend_sha": "458548af4979d032bc8bfe5716c7605e9f4a3d41",
+    "server_sha": "18e180904469d49093ac913857501a2965c4bcac",
+    "tag": "2.11.0.dev202611191605",
+    "version": "2.11.0.dev202611191605"
   },
   "stable": {
-    "frontend_sha": "4318416bb24ade685a77ea9eaf7124c455bd310a",
+    "frontend_sha": "a622edcb6d31af88642f9a8bbbe64a1678b38ba4",
     "server_sha": "bef82530e2bff150f5ecf70d217ae065adc619ee",
-    "tag": "2.10.12.post202611191302",
-    "version": "2.10.12.post202611191302"
+    "tag": "2.10.12.post202611191605",
+    "version": "2.10.12.post202611191605"
   }
 }
