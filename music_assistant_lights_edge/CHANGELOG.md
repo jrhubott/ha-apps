@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.11.0.dev202611191715
+
+Built 2026-11-19 17:35 UTC from:
+
+- server [`edge`](https://github.com/jrhubott/music-assistant-server/tree/18e180904469d49093ac913857501a2965c4bcac) (18e180904)
+- frontend [`edge`](https://github.com/jrhubott/music-assistant-frontend/tree/2f8877c5556938eb0d2ddac6289160ec0b602c9b) (2f8877c55)
+
+### Server: no new commits
+
+### Frontend: 1 new commit ([compare](https://github.com/jrhubott/music-assistant-frontend/compare/458548af4979...2f8877c55569))
+
+- Show party tips under the QR code and give the leaderboard its own card ([a44d446](https://github.com/jrhubott/music-assistant-frontend/commit/a44d44601899e722e6acc91f28e7792a33e89fab))
+
 ## 2.11.0.dev202611191605
 
 Built 2026-11-19 16:23 UTC from:
