@@ -168,6 +168,9 @@ def main() -> int:
                 "server_repo": server_fork,
                 "frontend_repo": frontend_fork,
                 "image": cfg["image"],
+                # the CHANGELOG lists the commits since these; empty for a channel's first build
+                "previous_server_sha": (previous or {}).get("server_sha", ""),
+                "previous_frontend_sha": (previous or {}).get("frontend_sha", ""),
             }
         )
         print(f"{channel}: build {version} from {item['server_branch']}@{item['server_sha'][:9]}"
