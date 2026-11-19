@@ -1,5 +1,30 @@
 # Changelog
 
+## 2.11.0.dev202611190551
+
+Built 2026-11-19 06:14 UTC from:
+
+- server [`edge`](https://github.com/jrhubott/music-assistant-server/tree/e493016b53e75e7fe04589e29440fb2a2571ae59) (e493016b5)
+- frontend [`edge`](https://github.com/jrhubott/music-assistant-frontend/tree/4a9035241e088841bb5cd16c9924546dd0b2e471) (4a9035241)
+
+### Server: 9 new commits ([compare](https://github.com/jrhubott/music-assistant-server/compare/ce4e64faf01d...e493016b53e7))
+
+- Give the follow handler tests' stub player the mass a config update reads ([9c39d5a](https://github.com/jrhubott/music-assistant-server/commit/9c39d5abfa511763b8f19a38410d7d8c2013fc7c))
+- Let Hue lights follow only Sonos speakers, behind a plugin option ([c911dbf](https://github.com/jrhubott/music-assistant-server/commit/c911dbf81d2ec5d839884781d7ff0cb1a1a9f92c))
+- Correct small offsets of a followed speaker at render time ([647d0d4](https://github.com/jrhubott/music-assistant-server/commit/647d0d4684ca946142b12148d22a349c7e13030f))
+- Publish the player a light follows in its extra attributes ([200b511](https://github.com/jrhubott/music-assistant-server/commit/200b5111efdcc95714639588f8f8f9d76b3b5e74))
+- Add a per-light delay for lights that follow a speaker ([8b9bd93](https://github.com/jrhubott/music-assistant-server/commit/8b9bd93da157928e3694519c9af680f7794a2f17))
+- Let a light follow its speaker again once its group regroups natively ([67c6c5f](https://github.com/jrhubott/music-assistant-server/commit/67c6c5f026a1ec7a2a7b19448427b451ba32b1f1))
+- Refuse playback commands on a light that follows a speaker ([edf9a75](https://github.com/jrhubott/music-assistant-server/commit/edf9a7587d67ad60e5c0611b89fe308e79acbf2f))
+- Turn following lights into Sendspin members once their group moves onto Sendspin ([8c91fca](https://github.com/jrhubott/music-assistant-server/commit/8c91fcab4d702d6acbb49c4685252b096e6fe189))
+- Let Hue lights follow a speaker that plays over its own protocol ([d2fa40c](https://github.com/jrhubott/music-assistant-server/commit/d2fa40ca2bca96556144358a5a2cb1c81b4b1b2b))
+
+### Frontend: 3 new commits ([compare](https://github.com/jrhubott/music-assistant-frontend/compare/e259addc9dc0...4a9035241e08))
+
+- Mark lights that follow a speaker, and say when they cannot follow ([a6627e1](https://github.com/jrhubott/music-assistant-frontend/commit/a6627e1335f90d5bf2dccdb22650b61a23f2180a))
+- Show lights that follow a speaker in the audio pipeline ([03052e7](https://github.com/jrhubott/music-assistant-frontend/commit/03052e719b6641848af0a29c88400b732a23aff9))
+- feat: show lights in a group apart from its speakers ([b68491b](https://github.com/jrhubott/music-assistant-frontend/commit/b68491b236643df75d375dc8fd72a295a02567ef))
+
 ## 2.11.0.dev202611190449
 
 Built 2026-11-19 05:09 UTC from:
