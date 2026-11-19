@@ -16,12 +16,14 @@ it from the repository URL), for example `d4cd87db_music_assistant_lights_edge`.
 
 ## Apps
 
-| App | Folder | What it is |
-|---|---|---|
-| Music Assistant Edge (jrhubott) | `music_assistant_lights_edge` | Upstream Music Assistant `dev`/`main` plus the feature branches merged into the forks' `edge` branches (fixes and features in progress) |
-| Music Assistant Stable (jrhubott) | `music_assistant_jrhubott_stable` | Upstream Music Assistant `stable` (the latest release plus backports about to be released) plus the stable-based fixes merged into the forks' `stable` branches |
+| App | Folder and slug | Home Assistant slug | Container | What it is |
+|---|---|---|---|---|
+| Music Assistant Edge (jrhubott) | `music_assistant_lights_edge` | `d4cd87db_music_assistant_lights_edge` | `app_d4cd87db_music_assistant_lights_edge` | Upstream Music Assistant `dev`/`main` plus the feature branches merged into the forks' `edge` branches (fixes and features in progress) |
+| Music Assistant Stable (jrhubott) | `music_assistant_jrhubott_stable` | `d4cd87db_music_assistant_jrhubott_stable` | `app_d4cd87db_music_assistant_jrhubott_stable` | Upstream Music Assistant `stable` (the latest release plus backports about to be released) plus the stable-based fixes merged into the forks' `stable` branches |
 
-An app shows up in the store once its first image is built and its folder is committed.
+The Home Assistant slug is the one `ha apps` commands, the data folder and the container name use.
+The Edge slug still says `lights` from the app's first name; it was kept so existing installs keep
+their data. An app shows up in the store once its first image is built and its folder is committed.
 
 ## Music Assistant Edge (jrhubott)
 
