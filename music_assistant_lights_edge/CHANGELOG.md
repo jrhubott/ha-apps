@@ -1,5 +1,25 @@
 # Changelog
 
+## 2.11.0.dev202611191735
+
+Built 2026-11-19 17:50 UTC from:
+
+- server [`edge`](https://github.com/jrhubott/music-assistant-server/tree/ae59f69dd7c981456270ee099e2d19780657ec78) (ae59f69dd)
+- frontend [`edge`](https://github.com/jrhubott/music-assistant-frontend/tree/2f8877c5556938eb0d2ddac6289160ec0b602c9b) (2f8877c55)
+
+### Server: 6 new commits ([compare](https://github.com/jrhubott/music-assistant-server/compare/18e180904469...ae59f69dd7c9))
+
+- Name the headphone zone of a Sonos speaker apart from the speaker ([1e02ccf](https://github.com/jrhubott/music-assistant-server/commit/1e02ccf2c1dccb5e7ac9ca75b1395f70cb70b7cd))
+- Hold the queue's position while an announcement plays (#7847) ([0af34ba](https://github.com/jrhubott/music-assistant-server/commit/0af34bac92f7c552cc37207078e6815e5128a6fd))
+- Show remotes and volume knobs on Sendspin as controllers (#7966) ([f220f63](https://github.com/jrhubott/music-assistant-server/commit/f220f63bdf35f68c2cce2a69f87ad0728bd43bdc))
+- Stop a WiiM on squeezelite from pausing what plays right after a stop (#7968) ([54d1972](https://github.com/jrhubott/music-assistant-server/commit/54d1972b82da3a0cf815f46f25f7a683387df8ad))
+- Let every provider declare what it offers in its manifest (#7965) ([f7f46ff](https://github.com/jrhubott/music-assistant-server/commit/f7f46ff0055a4f4545f6bfa5cc70308ed5094873))
+- Bump aioslimproto to 3.6.8 (#7967) ([2506795](https://github.com/jrhubott/music-assistant-server/commit/2506795527e19da7c373528e5ebd70184ebc2899))
+
+### Frontend: 1 new commit ([compare](https://github.com/jrhubott/music-assistant-frontend/compare/458548af4979...2f8877c55569))
+
+- Show party tips under the QR code and give the leaderboard its own card ([a44d446](https://github.com/jrhubott/music-assistant-frontend/commit/a44d44601899e722e6acc91f28e7792a33e89fab))
+
 ## 2.11.0.dev202611191715
 
 Built 2026-11-19 17:35 UTC from:
