@@ -1,5 +1,22 @@
 # Changelog
 
+## 2.11.0.dev202611191302
+
+Built 2026-11-19 13:21 UTC from:
+
+- server [`edge`](https://github.com/jrhubott/music-assistant-server/tree/debde5ce96798f40dbc42db10b8803193c29f588) (debde5ce9)
+- frontend [`edge`](https://github.com/jrhubott/music-assistant-frontend/tree/967425ccb219e4cf5517be928fa00e741be953ab) (967425ccb)
+
+### Server: 1 new commit ([compare](https://github.com/jrhubott/music-assistant-server/compare/cbefaeff5cf2...debde5ce9679))
+
+- Party: add a lyrics delay for the karaoke dashboard ([484da8b](https://github.com/jrhubott/music-assistant-server/commit/484da8b8825f8ca76b7b71099b812638556317ac))
+
+### Frontend: 3 new commits ([compare](https://github.com/jrhubott/music-assistant-frontend/compare/4a9035241e08...967425ccb219))
+
+- Party dashboard: hold the lyrics back by the party's lyrics delay ([4c5f351](https://github.com/jrhubott/music-assistant-frontend/commit/4c5f3516d8b63a10d4fedbdbec27e999a7b21b5b))
+- Party dashboard: count down the line after a musical break ([c651bd6](https://github.com/jrhubott/music-assistant-frontend/commit/c651bd604b99f8d6932e1ea901229fcda982aadf))
+- Lyrics: finish the word fill before the next line takes over ([019a3c4](https://github.com/jrhubott/music-assistant-frontend/commit/019a3c4239ca02ddaa57663e24218dd88a61a97b))
+
 ## 2.11.0.dev202611190614
 
 Built 2026-11-19 06:33 UTC from:
