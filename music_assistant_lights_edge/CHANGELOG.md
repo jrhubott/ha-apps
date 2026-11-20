@@ -1,5 +1,53 @@
 # Changelog
 
+## 2.11.0.dev202611202015
+
+Built 2026-11-20 20:36 UTC from:
+
+- server [`edge`](https://github.com/jrhubott/music-assistant-server/tree/ae59f69dd7c981456270ee099e2d19780657ec78) (ae59f69dd)
+- frontend [`edge`](https://github.com/jrhubott/music-assistant-frontend/tree/b2cf99a6368cf45d4e95d186014eaf9a6493b4b0) (b2cf99a63)
+
+### Server: no new commits
+
+### Frontend: 36 new commits ([compare](https://github.com/jrhubott/music-assistant-frontend/compare/2f8877c55569...b2cf99a6368c))
+
+- Add share links for tracks, albums and artists (#3040) ([fa83313](https://github.com/jrhubott/music-assistant-frontend/commit/fa83313c6f7454b094c7652ebfe70e3ef5f4493a))
+- Open the docs at the new Playback heading from a player's Playback page (#3285) ([0ca85ee](https://github.com/jrhubott/music-assistant-frontend/commit/0ca85eec89fe71cabd65333823330f45ce60f2c3))
+- Return to the previous page after saving settings (#3284) ([879e683](https://github.com/jrhubott/music-assistant-frontend/commit/879e6837ba6428e563c3c7019cd0daf300da1ae8))
+- Add a back arrow to Settings pages (#3282) ([6b69177](https://github.com/jrhubott/music-assistant-frontend/commit/6b69177afa62fc6f5bf4488ec00b6a8db4b73ad0))
+- Keep Escape going back after picking from a dropdown (#3283) ([6b14f59](https://github.com/jrhubott/music-assistant-frontend/commit/6b14f5920ae3339786471e703336ffb791e42d92))
+- Call each player's queue settings Playback (#3281) ([5555b9b](https://github.com/jrhubott/music-assistant-frontend/commit/5555b9b53bcdf42ca3feb4a73f8044a6b1fb24f5))
+- Redesign the setup wizard layout (#3280) ([b00f1e5](https://github.com/jrhubott/music-assistant-frontend/commit/b00f1e5751935cf214125dfa961d1905c0c31a2f))
+- Show the AI step's services without a settings link (#3279) ([b99e0c7](https://github.com/jrhubott/music-assistant-frontend/commit/b99e0c770feb4c594cd17cce8af9c36f5b639887))
+- Show Audio analysis and Metadata on one page each (#3274) ([290bbf5](https://github.com/jrhubott/music-assistant-frontend/commit/290bbf5de8c1d7de068beb27cc8db5c6d04138f6))
+- Do the Home Assistant settings right on its page (#3275) ([a628180](https://github.com/jrhubott/music-assistant-frontend/commit/a628180de5f3df8988e05c1cd055439f5ea58f85))
+- Save settings that apply right away without a Save button (#3276) ([ad8d6c8](https://github.com/jrhubott/music-assistant-frontend/commit/ad8d6c8e6e43c4424db4be00829a140f34ebad02))
+- Pick the engine of each AI feature right on the AI page (#3273) ([e37e18b](https://github.com/jrhubott/music-assistant-frontend/commit/e37e18b5d0794a93fef79444d73d7713a525e9f0))
+- Make the remaining setup wizard steps more inviting (#3270) ([6c7c1d1](https://github.com/jrhubott/music-assistant-frontend/commit/6c7c1d1bdeb3d49acc45d4d84a70943ef9257972))
+- Keep Settings in a centred column on wide screens (#3272) ([a98df33](https://github.com/jrhubott/music-assistant-frontend/commit/a98df3330b7dbcd1adba512344dbedbeebb81352))
+- Add AI services right on the AI page (#3271) ([f8db007](https://github.com/jrhubott/music-assistant-frontend/commit/f8db007b1c75a4462c568f6a211f0696cf7405e5))
+- Polish the setup wizard's choice and music app steps (#3265) ([055cb47](https://github.com/jrhubott/music-assistant-frontend/commit/055cb479e836cf240d7e17953cac83faebd711f5))
+- Make choosing a folder for Local files simpler (#3269) ([d454012](https://github.com/jrhubott/music-assistant-frontend/commit/d4540121d91549145fc06f90685442d92d4d7c17))
+- Add a folder or network share right from the folder picker (#3267) ([51e4910](https://github.com/jrhubott/music-assistant-frontend/commit/51e491012e44b12cc35372e62c06219f90e359aa))
+- Line up the category labels on provider cards (#3268) ([05e2ac4](https://github.com/jrhubott/music-assistant-frontend/commit/05e2ac4870fd3bd207f3be44938cf69b0e1eea13))
+- Make the optional steps of the setup wizard more inviting (#3266) ([37f7c5f](https://github.com/jrhubott/music-assistant-frontend/commit/37f7c5f56ca39baece61300a3ceb5039021fac15))
+- Reorder and hide the rows of a podcast episode page (#3246) ([46cf150](https://github.com/jrhubott/music-assistant-frontend/commit/46cf150c21ec7bc42dbaee6e8a6c8d6330d2f4d9))
+- Start the first setup with a welcome and keep account creation in the wizard (#3264) ([628a922](https://github.com/jrhubott/music-assistant-frontend/commit/628a9225ef8aaf42fac5cad8643b282e99f14524))
+- Explain how to set up a fresh server when using the dev frontend (#3263) ([bee28f2](https://github.com/jrhubott/music-assistant-frontend/commit/bee28f22119a4ef50f6bbdf2c6a2371c164e2e21))
+- Clarify library-based statistics (#3132) ([12a202b](https://github.com/jrhubott/music-assistant-frontend/commit/12a202b6b01281eccdf7402dcc900d87f833ee90))
+- Offer enabled guests in selected music-source sharing (#3219) ([ff4c9c4](https://github.com/jrhubott/music-assistant-frontend/commit/ff4c9c46f06cf45563d0b4331ed662dc61c4874d))
+- Open a Discover section in full by clicking its title (#3114) ([2a01093](https://github.com/jrhubott/music-assistant-frontend/commit/2a010937c7a5e12f4a1e8c9a34e9a4c1ab494dcf))
+- Ask about AI in the setup wizard (#3262) ([b95dee8](https://github.com/jrhubott/music-assistant-frontend/commit/b95dee8972197a554e939bb1794e678e9b7e1611))
+- Open the Marketplace on AI services from the AI page (#3261) ([d15a5cf](https://github.com/jrhubott/music-assistant-frontend/commit/d15a5cfe2d6e98e2c48ff9c11aa7b7481d131543))
+- Combine Sendspin speakers into a stereo pair (#3253) ([7bd92a9](https://github.com/jrhubott/music-assistant-frontend/commit/7bd92a942bb3e15d16fd0c50b6f6ca7c0d60cfc5))
+- Hold the timeline while an announcement interrupts the queue (#3258) ([b4f8556](https://github.com/jrhubott/music-assistant-frontend/commit/b4f85569c05e21618ca0ced03702248e48b3d6af))
+- Filter plugins by what they do (#3254) ([5279799](https://github.com/jrhubott/music-assistant-frontend/commit/5279799977dbb44df5b0fa133c6b3d87a7d6df87))
+- Use the new names Home Assistant Link and Home Assistant app (#3260) ([0e2c656](https://github.com/jrhubott/music-assistant-frontend/commit/0e2c6563cbafb1a99c726b6c8b37d323310f5b6a))
+- Connect Home Assistant before setting up remote access in the setup wizard (#3259) ([0752a39](https://github.com/jrhubott/music-assistant-frontend/commit/0752a39a04790b5e7c1f98347fe8bf5aca3dacfa))
+- Make the setup wizard's network step only about remote access (#3255) ([9f55283](https://github.com/jrhubott/music-assistant-frontend/commit/9f55283c29cda1da6635f0fe08d4f9f4f31e5be7))
+- Show the AI from Home Assistant on its settings page (#3257) ([b6569f6](https://github.com/jrhubott/music-assistant-frontend/commit/b6569f6588d93910abc522355832d85d98447c56))
+- Add an AI page to the settings (#3256) ([8f767d0](https://github.com/jrhubott/music-assistant-frontend/commit/8f767d092748b973edaeb600ef5b95aa8cf6a463))
+
 ## 2.11.0.dev202611191735
 
 Built 2026-11-19 17:50 UTC from:
