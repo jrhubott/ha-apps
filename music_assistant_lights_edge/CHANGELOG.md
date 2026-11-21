@@ -1,5 +1,58 @@
 # Changelog
 
+## 2.11.0.dev202611210750
+
+Built 2026-11-21 08:12 UTC from:
+
+- server [`edge`](https://github.com/jrhubott/music-assistant-server/tree/419af4e0e13aa79b22e0afc967892298f4a26619) (419af4e0e)
+- frontend [`edge`](https://github.com/jrhubott/music-assistant-frontend/tree/b2cf99a6368cf45d4e95d186014eaf9a6493b4b0) (b2cf99a63)
+
+### Server: 42 new commits ([compare](https://github.com/jrhubott/music-assistant-server/compare/ae59f69dd7c9...419af4e0e13a))
+
+- Let lights follow a multi-channel speaker on its own protocol ([86280b5](https://github.com/jrhubott/music-assistant-server/commit/86280b5df5fc996b63da9fca8823886dd3fdfd5c))
+- Move the light follow scenario to the top of Grouping as GROUP-900 ([a717e98](https://github.com/jrhubott/music-assistant-server/commit/a717e98e9d7b56c4d7244d3b2353c6f8649d3e2c))
+- Restart playback when a speaker drops its stream and goes silent (#8017) ([772e48c](https://github.com/jrhubott/music-assistant-server/commit/772e48cc70c6ac501f767ce85d89b1cb6960f352))
+- Stop an AirPlay device from taking the model of another device with the same name (#7978) ([7bed10f](https://github.com/jrhubott/music-assistant-server/commit/7bed10fab99ddd741478a151832baf667ac4f727))
+- Tidy up after the queue took over releasing audio (#8013) ([26682cc](https://github.com/jrhubott/music-assistant-server/commit/26682cc181edb4844990fb0c5a7434efbb761632))
+- Don't quit Cast sessions that Music Assistant didn't start (#7811) ([048d03f](https://github.com/jrhubott/music-assistant-server/commit/048d03f978b37d99b4ab315bb1be7cc272197d68))
+- Bring a squeezelite player back to the power state it had (#8005) ([9ad09ae](https://github.com/jrhubott/music-assistant-server/commit/9ad09aee8b35b93fccd0eaab9ce22a22c5afe618))
+- ⬆️ Update music-assistant-frontend to 2.17.377 (#8016) ([9996e94](https://github.com/jrhubott/music-assistant-server/commit/9996e9414b76ae9db59c76adda266d411108b15e))
+- Name the audio input of a Sendspin player (#8010) ([0a06967](https://github.com/jrhubott/music-assistant-server/commit/0a069672482b67a13eb878903dbe61adeee0f8da))
+- Keep a track playing when a radio queue refreshes its upcoming tracks (#7894) ([86d6e50](https://github.com/jrhubott/music-assistant-server/commit/86d6e50d34dd90cb4fd951e54c9a1e15ed0aa268))
+- Use MP3 by default for most Google Cast speakers to prevent dropouts (#8011) ([0d4edc8](https://github.com/jrhubott/music-assistant-server/commit/0d4edc840dfafc7305844bef305020709130ccf3))
+- Let the queue alone decide when the audio of a track is released (#7884) ([55a42e7](https://github.com/jrhubott/music-assistant-server/commit/55a42e7dc1d85913a8e16a2fff3c98fde0efdeea))
+- Show only the pre-announce toggle in basic announcement settings (#8009) ([3b5699a](https://github.com/jrhubott/music-assistant-server/commit/3b5699a23073ca692d42893a9002b063c633eff3))
+- Keep Sonos playing after the upcoming tracks are replaced (#8004) ([dcd891f](https://github.com/jrhubott/music-assistant-server/commit/dcd891feb4f573f5d13d919025189d9b7e98e84e))
+- Show the background task limit without the advanced switch (#8008) ([e1e79c4](https://github.com/jrhubott/music-assistant-server/commit/e1e79c48c408d5a97d2d20990724e0414b0b99d8))
+- Emby provider: support audiobook libraries (#7962) ([85136fc](https://github.com/jrhubott/music-assistant-server/commit/85136fcbd630036f1e2231507236e52516a707b0))
+- Bump transformers to 5.23.0 and huggingface-hub to 2.4.0 (#8002) ([7cda51b](https://github.com/jrhubott/music-assistant-server/commit/7cda51b69921501593e02f1c3496bcaa599d21e9))
+- Support native decoding Jellyfin wma formats, including wmapro & wmalossless (#7989) ([fa41378](https://github.com/jrhubott/music-assistant-server/commit/fa41378e1e14ddf817fb11ab4a26ca99c9ac55e1))
+- Narrow broad exception handlers in Plex and Plex Connect (BLE001) (#7992) ([8d7a77f](https://github.com/jrhubott/music-assistant-server/commit/8d7a77faaafd9d87de205bcc20627b963d642c4e))
+- Make the Audio Analysis settings page read less from disk on large libraries (#7991) ([166bcd5](https://github.com/jrhubott/music-assistant-server/commit/166bcd56422d763e807637226a746fff05672ee0))
+- Call the player queue defaults Playback in setting texts (#7990) ([8a5dae9](https://github.com/jrhubott/music-assistant-server/commit/8a5dae9c495690d5e451f027cbe0efb6d81f03bd))
+- Close the first-time setup 15 minutes after the server starts (#7410) ([86eab1f](https://github.com/jrhubott/music-assistant-server/commit/86eab1ff5eb53310d17bc2ecba9771ca10f435d0))
+- Describe how a player provider delivers a set of speakers (#7983) ([d09d26e](https://github.com/jrhubott/music-assistant-server/commit/d09d26ef3a3492695d39bae50b31101eb12d0a14))
+- Follow Home app volume changes on an idle HomePod (#7982) ([0c85ff8](https://github.com/jrhubott/music-assistant-server/commit/0c85ff8849b56d1fe05500d55fad6c1ac3e21a73))
+- Keep an Apple TV room audible after switching its audio output (#7977) ([38ca99c](https://github.com/jrhubott/music-assistant-server/commit/38ca99c76e1c105fc38317bcad01ae9ab872368c))
+- Play a stereo pair of HomePods as one player (#7937) ([515d036](https://github.com/jrhubott/music-assistant-server/commit/515d036053a19adb0acd29009c4666dedfdbe4ca))
+- ⬆️ Update music-assistant-frontend to 2.17.376 (#7985) ([9b0ab9b](https://github.com/jrhubott/music-assistant-server/commit/9b0ab9b6264daebd71525161fc7bd96971575271))
+- Play an Apple TV and its HomePods in a Sendspin group (#7950) ([74fbc26](https://github.com/jrhubott/music-assistant-server/commit/74fbc2605b483772d9458b6e5f1d25e8811d3ca7))
+- Match album tracks to MusicBrainz by release length and ISRC (#7845) ([05a69a6](https://github.com/jrhubott/music-assistant-server/commit/05a69a60c4d4049a6ac52b71efdb4fcb2ba4e238))
+- Apply Home Assistant player control changes right away (#7975) ([8ae3a4f](https://github.com/jrhubott/music-assistant-server/commit/8ae3a4fe52a1db8d8121ace472d301002aaf7c0e))
+- Map OpenSubsonic release_types field onto MusicAssistant AlbumType. (#7951) ([a886664](https://github.com/jrhubott/music-assistant-server/commit/a8866645f038f84ee1aef6749001c080c2deb00a))
+- List Home Assistant as an AI and text-to-speech service (#7974) ([4110870](https://github.com/jrhubott/music-assistant-server/commit/4110870d45e3bb8f6a3ba2a6135336f4176b8d7c))
+- Keep Sonos playing when crossfading into a track added after playback started (#7964) ([8d1d6c2](https://github.com/jrhubott/music-assistant-server/commit/8d1d6c27710438158257b866b41f84d27ff7e7ca))
+- Shorter Spotify Soloist setup texts (#7973) ([e7673f1](https://github.com/jrhubott/music-assistant-server/commit/e7673f1507af52f9b62ea77a4df442af737f0c47))
+- Reuse your Soloist API key between Spotify and Spotify Connect (#7972) ([28fce35](https://github.com/jrhubott/music-assistant-server/commit/28fce359e96213164b4323b8aa2ec983d06aec83))
+- Keep open sessions up to date after a profile or preference change (#7971) ([501408b](https://github.com/jrhubott/music-assistant-server/commit/501408b1daa896d93554b782a76d22ab3d5e6d2c))
+- Log ISRCs that MusicBrainz lacks for an album (#7831) ([c6c67dd](https://github.com/jrhubott/music-assistant-server/commit/c6c67dda21dd49946640c808aa994e78a3bd8c10))
+- Fix an occasionally failing mDNS lookup test (#7969) ([f6dbcd7](https://github.com/jrhubott/music-assistant-server/commit/f6dbcd7ec5095533ea3708b39a0a32e5cd70f11e))
+- Fix Sendspin failing to start when port 8927 is taken (#7792) ([091b6b2](https://github.com/jrhubott/music-assistant-server/commit/091b6b2c1a3a5625f93c2072bc2c5792ca2c0900))
+- Play an Apple TV and its HomePods as one player (#7936) ([667d645](https://github.com/jrhubott/music-assistant-server/commit/667d645ddbd8f6580cfd277ae954e78942a94b11))
+- …and more, see the compare link
+
+### Frontend: no new commits
+
 ## 2.11.0.dev202611202015
 
 Built 2026-11-20 20:36 UTC from:
