@@ -1,5 +1,30 @@
 # Changelog
 
+## 2.11.0.dev202611211502
+
+Built 2026-11-21 15:28 UTC from:
+
+- server [`edge`](https://github.com/jrhubott/music-assistant-server/tree/82a0912b5c23d212a4567c2c5a6acd98fa239395) (82a0912b5)
+- frontend [`edge`](https://github.com/jrhubott/music-assistant-frontend/tree/e5acd4f37223f0a23989f21fb447cc9ff37a803d) (e5acd4f37)
+
+### Server: 8 new commits ([compare](https://github.com/jrhubott/music-assistant-server/compare/419af4e0e13a...82a0912b5c23))
+
+- Remove an old upgrade step that switched disabled players back on (#7981) ([1c6ad96](https://github.com/jrhubott/music-assistant-server/commit/1c6ad964b7a472f050ae3eab649025414310ab12))
+- Check broad error catches in playback and the player providers (#7979) ([15d6bf1](https://github.com/jrhubott/music-assistant-server/commit/15d6bf17503464e06ae4ba711c1bf467a326d5d3))
+- Remove duplicate albums found during the MusicBrainz lookup (#7821) ([4fb2cae](https://github.com/jrhubott/music-assistant-server/commit/4fb2cae894f6abebfbc8ff0f6c7120ff9d6a6ac9))
+- Line-in sources follow the player access of the user (#8015) ([9b5ff42](https://github.com/jrhubott/music-assistant-server/commit/9b5ff42f4ab0ffa5b8e8fc1dd4f32d93443fc1db))
+- Don't abort a playlist migration or import when a music service rate limits (#8026) ([bfb1fc3](https://github.com/jrhubott/music-assistant-server/commit/bfb1fc328e93bffdf27ccd62e87aa4e76940d3b6))
+- Use public provider properties and helpers in the Apple Music provider (#8022) ([5fe7a96](https://github.com/jrhubott/music-assistant-server/commit/5fe7a96f238fda0172b4f9d06488669ca292973a))
+- Update to latest py-opensonic (#8020) ([e96268a](https://github.com/jrhubott/music-assistant-server/commit/e96268a8fea79be44e7f1fc3f278772d824e0d6e))
+- ⬆️ Update music-assistant-models to 1.1.249 (#8027) ([201f645](https://github.com/jrhubott/music-assistant-server/commit/201f64537d93c412d12825e0a227f432cbbf67c8))
+
+### Frontend: 4 new commits ([compare](https://github.com/jrhubott/music-assistant-frontend/compare/b2cf99a6368c...e5acd4f37223))
+
+- Show only lights that really follow a speaker as followers ([9487d66](https://github.com/jrhubott/music-assistant-frontend/commit/9487d66d847120d5a3bf3d20f844737cf100c94e))
+- Show each analysis module's progress on its own card (#3289) ([26a9180](https://github.com/jrhubott/music-assistant-frontend/commit/26a9180c5eb5e4cec18e39d03082833f65e2efab))
+- Open settings in place on Metadata, Audio analysis and Background tasks (#3288) ([a001d7b](https://github.com/jrhubott/music-assistant-frontend/commit/a001d7be24942d8778835d600d1b86f75a7626c2))
+- Show a missing AI engine under its picker (#3287) ([88b7bcc](https://github.com/jrhubott/music-assistant-frontend/commit/88b7bcc5c0b9fb1f8eb966b4c09d2ca63b0b28ef))
+
 ## 2.11.0.dev202611210750
 
 Built 2026-11-21 08:12 UTC from:
