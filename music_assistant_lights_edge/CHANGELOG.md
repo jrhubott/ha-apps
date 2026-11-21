@@ -1,5 +1,28 @@
 # Changelog
 
+## 2.11.0.dev202611212031
+
+Built 2026-11-21 20:50 UTC from:
+
+- server [`edge`](https://github.com/jrhubott/music-assistant-server/tree/fa6ecc8e429a6001ced0d463c3f73611a9c5921f) (fa6ecc8e4)
+- frontend [`edge`](https://github.com/jrhubott/music-assistant-frontend/tree/1730114b9b62ac20c1b3caaf791a292ba11147c9) (1730114b9)
+
+### Server: 4 new commits ([compare](https://github.com/jrhubott/music-assistant-server/compare/682965c58d1a...fa6ecc8e429a))
+
+- Party: add fair queue, PIN host controls and a lyrics-only setting ([6cd4a1a](https://github.com/jrhubott/music-assistant-server/commit/6cd4a1a89cd99c1d2469bf0be5126a4ff43d03a4))
+- Party: describe the burn-in swap between songs ([e95d623](https://github.com/jrhubott/music-assistant-server/commit/e95d623bce759ccbe3251205c74ee8abe9f7a02d))
+- Party: add a setting to hide the copy link button ([bd6182a](https://github.com/jrhubott/music-assistant-server/commit/bd6182a77e5dddd4b1b2c159c1021210727d18c9))
+- Party: add a setting for word-by-word lyrics ([5e7afba](https://github.com/jrhubott/music-assistant-server/commit/5e7afbabac66fceebd97f4c73e26079a8291dbe6))
+
+### Frontend: 6 new commits ([compare](https://github.com/jrhubott/music-assistant-frontend/compare/df7bb55f801e...1730114b9b62))
+
+- Party: add host mode and lyrics-only messages to the guest page ([4014359](https://github.com/jrhubott/music-assistant-frontend/commit/4014359d234a48a02422f0ce6ba1444c26fe1411))
+- Party screen: only swap sides for burn-in between songs ([08f3792](https://github.com/jrhubott/music-assistant-frontend/commit/08f37924262b3862506288b811efdb3d09059ad3))
+- Party screen: remove the Powered by Music Assistant footer ([5747353](https://github.com/jrhubott/music-assistant-frontend/commit/57473534450f55d054e1befdb9ceaf28eb07b056))
+- Party tips: match the song badges and add four tips ([fa621c1](https://github.com/jrhubott/music-assistant-frontend/commit/fa621c119bb7840e438655739a538c44a477ee24))
+- Party: add a setting to hide the copy link button ([c02b5cd](https://github.com/jrhubott/music-assistant-frontend/commit/c02b5cd80f1fba6619d0231c53a243399e49cd4b))
+- Party dashboard: add a setting for word-by-word lyrics ([0ec773a](https://github.com/jrhubott/music-assistant-frontend/commit/0ec773af0e3172bfae63f8d5f80c6dcc255af405))
+
 ## 2.11.0.dev202611211653
 
 Built 2026-11-21 17:18 UTC from:
