@@ -1,5 +1,27 @@
 # Changelog
 
+## 2.11.0.dev202611211629
+
+Built 2026-11-21 16:53 UTC from:
+
+- server [`edge`](https://github.com/jrhubott/music-assistant-server/tree/6e02d3c152f84102a4ef6dd89a599b564f1ebc88) (6e02d3c15)
+- frontend [`edge`](https://github.com/jrhubott/music-assistant-frontend/tree/97112d821b57b3ca93ea37e5c587e49fc781470e) (97112d821)
+
+### Server: 9 new commits ([compare](https://github.com/jrhubott/music-assistant-server/compare/82a0912b5c23...6e02d3c152f8))
+
+- Give the follow handler tests' stub provider the sources a config update reads ([fa28b85](https://github.com/jrhubott/music-assistant-server/commit/fa28b85a5806962215d0ac74dbc04d7a27ecc47f))
+- Respect a rate limit from Zvuk Music and KION Music (#8036) ([ab5531a](https://github.com/jrhubott/music-assistant-server/commit/ab5531a84f10718e641daa0b00580c025fbbd369))
+- Keep the sleep timer when pausing a player that can't pause (#8033) ([5013cf4](https://github.com/jrhubott/music-assistant-server/commit/5013cf4b8bc13d8f69a41c6a88a415a7cd19e0e0))
+- Deezer: give audiobook authors their own pages (#7927) ([8d13a78](https://github.com/jrhubott/music-assistant-server/commit/8d13a7862a4ecccb5add617cbad1a2ca230e5999))
+- Speakers say which of their sources are inputs (#8029) ([9ad9972](https://github.com/jrhubott/music-assistant-server/commit/9ad9972ca6f34015a8f38377d2fc6d58fcf38371))
+- Fail playlist-migration matching per track instead of per provider (#7881) ([b628d60](https://github.com/jrhubott/music-assistant-server/commit/b628d60e581a472f9021a7d63c6eaf3312aff153))
+- Share one method for storing the main artists of albums and tracks (#7998) ([ff104e2](https://github.com/jrhubott/music-assistant-server/commit/ff104e29cef196137a156cb139d0343c48273290))
+- Speed up library pages and the MusicBrainz link run on a new install (#7984) ([192df99](https://github.com/jrhubott/music-assistant-server/commit/192df99bb80091287d67204ba87a8020f84b8d43))
+- Show a live source by its own name on its own player (#8031) ([b6a755a](https://github.com/jrhubott/music-assistant-server/commit/b6a755a909825fb8083c99951e8966e161fa4f86))
+
+### Frontend: 0 new commits ([compare](https://github.com/jrhubott/music-assistant-frontend/compare/e5acd4f37223...97112d821b57))
+
+
 ## 2.11.0.dev202611211502
 
 Built 2026-11-21 15:28 UTC from:
