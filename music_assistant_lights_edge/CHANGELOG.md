@@ -1,5 +1,22 @@
 # Changelog
 
+## 2.11.0.dev202611211653
+
+Built 2026-11-21 17:18 UTC from:
+
+- server [`edge`](https://github.com/jrhubott/music-assistant-server/tree/682965c58d1a5d45a6c1e2eaa7ef193d53867b7f) (682965c58)
+- frontend [`edge`](https://github.com/jrhubott/music-assistant-frontend/tree/df7bb55f801e4ee235109aa0a3d872e6377aee02) (df7bb55f8)
+
+### Server: 1 new commit ([compare](https://github.com/jrhubott/music-assistant-server/compare/6e02d3c152f8...682965c58d1a))
+
+- Add a Wake AirPlay button for Sonos speakers that stopped announcing it ([d1f4f30](https://github.com/jrhubott/music-assistant-server/commit/d1f4f3050222b6632435f58deeb6af485a97c00a))
+
+### Frontend: 3 new commits ([compare](https://github.com/jrhubott/music-assistant-frontend/compare/97112d821b57...df7bb55f801e))
+
+- Replace dynamic sample and dashboard icons with Lucide (#3292) ([565b515](https://github.com/jrhubott/music-assistant-frontend/commit/565b515dcbe69c56f6b8b4644c63602dd5b890b2))
+- Replace settings icons with Lucide (#3293) ([22b9ba8](https://github.com/jrhubott/music-assistant-frontend/commit/22b9ba885e64c45a6b4ff80ec048a71e62e46bdd))
+- Show a live source once in now playing (#3291) ([40478bd](https://github.com/jrhubott/music-assistant-frontend/commit/40478bd054c121fe1af8093c347b4c254a59e3bb))
+
 ## 2.11.0.dev202611211629
 
 Built 2026-11-21 16:53 UTC from:
