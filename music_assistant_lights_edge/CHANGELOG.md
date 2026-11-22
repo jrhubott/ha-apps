@@ -1,5 +1,27 @@
 # Changelog
 
+## 2.11.0.dev202611221936
+
+Built 2026-11-22 20:02 UTC from:
+
+- server [`edge`](https://github.com/jrhubott/music-assistant-server/tree/987b9ad962c34145b992862f74fb8937a4940c57) (987b9ad96)
+- frontend [`edge`](https://github.com/jrhubott/music-assistant-frontend/tree/49af3f6db092ad57912daff94548b3c858e636ca) (49af3f6db)
+
+### Server: 5 new commits ([compare](https://github.com/jrhubott/music-assistant-server/compare/a6e6df46d5c7...987b9ad962c3))
+
+- Standardise the naming across the BBC Sounds provider code (#8006) ([2297db5](https://github.com/jrhubott/music-assistant-server/commit/2297db51b86bcd532a376eaa7049961abe1d7764))
+- Use library method for removing cookie jar when unloading BBC Sounds (#8044) ([49b124b](https://github.com/jrhubott/music-assistant-server/commit/49b124b944c8133e673996af628fbf6913f267dc))
+- Deezer: fix audiobooks stopping after the first chapter (#8054) ([cb056ca](https://github.com/jrhubott/music-assistant-server/commit/cb056ca32ec8f49867d657a760381eb61823d84d))
+- Show how far the server's clock runs off in the diagnostics report (#8051) ([bfd87a5](https://github.com/jrhubott/music-assistant-server/commit/bfd87a5a1ce97df101e806febfa61f916e55b40f))
+- Show a WiiM stereo pair as one player (#7988) ([057a0f1](https://github.com/jrhubott/music-assistant-server/commit/057a0f172580f4dddea16ae8905b2eef0a659914))
+
+### Frontend: 4 new commits ([compare](https://github.com/jrhubott/music-assistant-frontend/compare/9ca880e45b5c...49af3f6db092))
+
+- Find live sources by name in search (#3297) ([b4854be](https://github.com/jrhubott/music-assistant-frontend/commit/b4854be473ffb2b92da80ecda3dbb6bb7626db2c))
+- Add a Live sources page (#3295) ([c39b369](https://github.com/jrhubott/music-assistant-frontend/commit/c39b3695c185995408c5efc38f3984411ce5a251))
+- Show the Live sources folder by name in Browse (#3294) ([ba9426e](https://github.com/jrhubott/music-assistant-frontend/commit/ba9426e0f6cb9c091aa6be3e95f1a0d8eb226b7b))
+- Add a subwoofer to Sendspin multi-channel players (#3286) ([10bb300](https://github.com/jrhubott/music-assistant-frontend/commit/10bb30073fe3096a5af343ae8d0ae640e9eb7273))
+
 ## 2.11.0.dev202611220511
 
 Built 2026-11-22 05:31 UTC from:
