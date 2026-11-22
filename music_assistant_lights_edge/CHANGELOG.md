@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.11.0.dev202611220511
+
+Built 2026-11-22 05:31 UTC from:
+
+- server [`edge`](https://github.com/jrhubott/music-assistant-server/tree/a6e6df46d5c79a32a3b06b81b23650557c89eab3) (a6e6df46d)
+- frontend [`edge`](https://github.com/jrhubott/music-assistant-frontend/tree/9ca880e45b5cb1c52f6443c903823daf9465f71e) (9ca880e45)
+
+### Server: 1 new commit ([compare](https://github.com/jrhubott/music-assistant-server/compare/a575610980d1...a6e6df46d5c7))
+
+- Tie Hue Party Auto brightness to the song's energy ([7a2a9f9](https://github.com/jrhubott/music-assistant-server/commit/7a2a9f9678aeb06c54baea6434609f0b287c96d5))
+
+### Frontend: no new commits
+
 ## 2.11.0.dev202611220424
 
 Built 2026-11-22 04:43 UTC from:
