@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.11.0.dev202611220012
+
+Built 2026-11-22 00:38 UTC from:
+
+- server [`edge`](https://github.com/jrhubott/music-assistant-server/tree/fa6ecc8e429a6001ced0d463c3f73611a9c5921f) (fa6ecc8e4)
+- frontend [`edge`](https://github.com/jrhubott/music-assistant-frontend/tree/9ca880e45b5cb1c52f6443c903823daf9465f71e) (9ca880e45)
+
+### Server: no new commits
+
+### Frontend: 1 new commit ([compare](https://github.com/jrhubott/music-assistant-frontend/compare/1730114b9b62...9ca880e45b5c))
+
+- Move party tips to a full-width bar and hide fullscreen buttons with anti burn-in ([8b33ee1](https://github.com/jrhubott/music-assistant-frontend/commit/8b33ee1850e2047d6525766e75e7fff1f20780fe))
+
 ## 2.11.0.dev202611212031
 
 Built 2026-11-21 20:50 UTC from:
