@@ -1,5 +1,37 @@
 # Changelog
 
+## 2.11.0.dev202611220424
+
+Built 2026-11-22 04:43 UTC from:
+
+- server [`edge`](https://github.com/jrhubott/music-assistant-server/tree/a575610980d17ca9e512ba4e7d83b281f573507e) (a57561098)
+- frontend [`edge`](https://github.com/jrhubott/music-assistant-frontend/tree/9ca880e45b5cb1c52f6443c903823daf9465f71e) (9ca880e45)
+
+### Server: 20 new commits ([compare](https://github.com/jrhubott/music-assistant-server/compare/fa6ecc8e429a...a575610980d1))
+
+- Catch drops after a rising build in Hue Party Auto ([7906304](https://github.com/jrhubott/music-assistant-server/commit/7906304e0c00dfe6db63753b8ab82a58f6b8a36f))
+- Add dance floor and party modes to Hue Lights Sync ([a237a6a](https://github.com/jrhubott/music-assistant-server/commit/a237a6a269934d589508c3bd93d1e3bb9529fddd))
+- ⬆️ Update music-assistant-frontend to 2.17.378 (#8052) ([3cc661d](https://github.com/jrhubott/music-assistant-server/commit/3cc661d46429ca62a1f505507ddfb7a89e62bae1))
+- Stop showing Spotify Connect playback on a speaker that is off (#8047) ([b1f9602](https://github.com/jrhubott/music-assistant-server/commit/b1f9602c1e74283888c0ec38bc35cf2e029ca972))
+- Keep AirPlay and Sendspin groups in sync when the server's clock runs fast or slow (#8040) ([5da3671](https://github.com/jrhubott/music-assistant-server/commit/5da36710ce66b500d6c7c187ec092b1d89066eda))
+- Show an error when no speaker of a universal group can play (#8048) ([fd20a75](https://github.com/jrhubott/music-assistant-server/commit/fd20a7596d227e78ce9cad8ef4298353f773ada2))
+- Stop Sonos speakers going silent when a track repeats (#8038) ([f539f97](https://github.com/jrhubott/music-assistant-server/commit/f539f97c39a8c51f869e38e2c4a55b5fabcbf285))
+- Add Spotify Recently Played browse folder and recommendation row (#8024) ([38e70db](https://github.com/jrhubott/music-assistant-server/commit/38e70dbd06d143d4ea7beb97390734e7d7602a4e))
+- Send fewer Spotify search requests (#8030) ([95975c7](https://github.com/jrhubott/music-assistant-server/commit/95975c7080c12c9cd62535834d143b131b0af631))
+- Stop an announcement to an AirPlay group from resuming the old queue (#7959) ([a3acc37](https://github.com/jrhubott/music-assistant-server/commit/a3acc375bc706323ac8fc4dafe14650373ed0914))
+- Share the 'can this speaker play now' check between plugins (#8045) ([23bf06a](https://github.com/jrhubott/music-assistant-server/commit/23bf06ace147b230f68468b00db0a226d8787f16))
+- Let speakers switch back to the AirPlay Receiver and play it once they are on (#8028) ([ee58111](https://github.com/jrhubott/music-assistant-server/commit/ee5811120671909432cea2af69c176c81c43348b))
+- Show how long to wait when a provider is rate limited (#8025) ([91aa9dc](https://github.com/jrhubott/music-assistant-server/commit/91aa9dcb038222d9043eec8c54c46024249a54f9))
+- Control each zone of a Sonos Amp Multi separately (#8032) ([4bb0e13](https://github.com/jrhubott/music-assistant-server/commit/4bb0e13ba3e59320674cfec1023ce7091feafb0b))
+- Add or remove a subwoofer on combined Sendspin speakers (#8000) ([81ad03c](https://github.com/jrhubott/music-assistant-server/commit/81ad03c39fd2d0d95c28b845b75b9775f02a25aa))
+- Add a subwoofer to combined Sendspin speakers (#7999) ([cdcc454](https://github.com/jrhubott/music-assistant-server/commit/cdcc454bead33dec851063957e21eccdeff99cbd))
+- Fix Apple HomeView speakers staying silent on AirPlay 2 (airplay-cli v0.5.16) (#8042) ([f967754](https://github.com/jrhubott/music-assistant-server/commit/f967754284cbb38b85d74b517052df04ae5bd385))
+- Speed up two slow AirPlay tests (#8041) ([4422531](https://github.com/jrhubott/music-assistant-server/commit/44225317b411a2495b07710f3888c61bd6d930b6))
+- Bring an AirPlay speaker in a Sendspin group back within seconds after it drops out (#8034) ([6310991](https://github.com/jrhubott/music-assistant-server/commit/6310991be0040579e2768940bc6e41031d54db08))
+- Gather live sources in one Browse folder, and list them for the app (#8037) ([e8363ab](https://github.com/jrhubott/music-assistant-server/commit/e8363ab853559b810aae966a32994456171769dc))
+
+### Frontend: no new commits
+
 ## 2.11.0.dev202611220012
 
 Built 2026-11-22 00:38 UTC from:
