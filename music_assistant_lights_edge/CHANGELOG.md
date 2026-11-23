@@ -1,5 +1,21 @@
 # Changelog
 
+## 2.11.0.dev202611231304
+
+Built 2026-11-23 13:29 UTC from:
+
+- server [`edge`](https://github.com/jrhubott/music-assistant-server/tree/1db37d4e22e700b5651a390d66a185aa3fb13871) (1db37d4e2)
+- frontend [`edge`](https://github.com/jrhubott/music-assistant-frontend/tree/4abc0427d8c16d207c2310c23e9057f742f362dc) (4abc0427d)
+
+### Server: 1 new commit ([compare](https://github.com/jrhubott/music-assistant-server/compare/987b9ad962c3...1db37d4e22e7))
+
+- Party: expand PIN host controls ([877a04b](https://github.com/jrhubott/music-assistant-server/commit/877a04b8aa4e8b109386ef891b87b3fc2e67555e))
+
+### Frontend: 2 new commits ([compare](https://github.com/jrhubott/music-assistant-frontend/compare/49af3f6db092...4abc0427d8c1))
+
+- Party: add full host controls to the guest page ([3919648](https://github.com/jrhubott/music-assistant-frontend/commit/3919648c4c0e9e01d773a335b268a4dc134a6697))
+- Party screen: move Top DJs with the anti burn-in swap ([72e3a31](https://github.com/jrhubott/music-assistant-frontend/commit/72e3a31789747915a638e12e73a8204eab2102e7))
+
 ## 2.11.0.dev202611221936
 
 Built 2026-11-22 20:02 UTC from:
