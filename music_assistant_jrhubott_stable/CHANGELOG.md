@@ -1,5 +1,20 @@
 # Changelog
 
+## 2.10.13.post202611232121
+
+Built 2026-11-23 21:39 UTC from:
+
+- server [`stable`](https://github.com/jrhubott/music-assistant-server/tree/dfdf61ddee1c406c4918d1489c6608674e426691) (dfdf61dde)
+- frontend [`stable`](https://github.com/jrhubott/music-assistant-frontend/tree/440b64bc0a1d8d0e512d270747d25187840499f2) (440b64bc0)
+
+Upstream release notes: https://github.com/music-assistant/server/releases/tag/2.10.13
+
+### Server: 1 new commit ([compare](https://github.com/jrhubott/music-assistant-server/compare/3a3b854adf22...dfdf61ddee1c))
+
+- Fix Sendspin player takeover for legacy clients with a lowercase MAC id (#8073) ([2c0219d](https://github.com/jrhubott/music-assistant-server/commit/2c0219d3c1def8f23699e39494e211fd77ef034b))
+
+### Frontend: no new commits
+
 ## 2.10.13.post202611211629
 
 Built 2026-11-21 16:53 UTC from:

@@ -1,5 +1,25 @@
 # Changelog
 
+## 2.11.0.dev202611232121
+
+Built 2026-11-23 21:39 UTC from:
+
+- server [`edge`](https://github.com/jrhubott/music-assistant-server/tree/1db37d4e22e700b5651a390d66a185aa3fb13871) (1db37d4e2)
+- frontend [`edge`](https://github.com/jrhubott/music-assistant-frontend/tree/2c0b749358e6a399100264ff64f3944a2e085a7e) (2c0b74935)
+
+### Server: no new commits
+
+### Frontend: 8 new commits ([compare](https://github.com/jrhubott/music-assistant-frontend/compare/4abc0427d8c1...2c0b749358e6))
+
+- Show where a live source comes from when it has no player (#3301) ([1514734](https://github.com/jrhubott/music-assistant-frontend/commit/1514734b4c4517a63a195088b63789af16692f3a))
+- Move the player buttons to the newer button style (#3304) ([3b628cd](https://github.com/jrhubott/music-assistant-frontend/commit/3b628cd8c81b5482d9c3f23b9c9a280dd96cebee))
+- Open library audiobooks and podcast episodes from the fullscreen player (#3300) ([9ea51f7](https://github.com/jrhubott/music-assistant-frontend/commit/9ea51f71dd13f2852980522fdfe58288f79666b2))
+- Remove unused Music Quiz texts (#3308) ([6619e80](https://github.com/jrhubott/music-assistant-frontend/commit/6619e807fe6d99d50558b25e1f9cc1aa4c82c0d2))
+- Show an add to playlist button instead of the heart for podcast episodes (#3303) ([54b36df](https://github.com/jrhubott/music-assistant-frontend/commit/54b36dfe85b8f8706bf22aadae59eba22612f277))
+- Fix misleading search text in Music Quiz (#3305) ([02c477a](https://github.com/jrhubott/music-assistant-frontend/commit/02c477a9855f8a797f924bcd978d4577d58cfff1))
+- Show the chapter as title in the minimized player (#3299) ([3c2d8f6](https://github.com/jrhubott/music-assistant-frontend/commit/3c2d8f6d9892ade44662094ea39feeb371f2056a))
+- Search only when you press Enter in party, quiz and smart playlist search (#3302) ([dc5ef9a](https://github.com/jrhubott/music-assistant-frontend/commit/dc5ef9a90f924c1effd314f1a6a9f4ca15ae4049))
+
 ## 2.11.0.dev202611231304
 
 Built 2026-11-23 13:29 UTC from:

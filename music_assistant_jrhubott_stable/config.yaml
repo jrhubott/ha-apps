@@ -1,5 +1,5 @@
 name: "Music Assistant Stable (jrhubott)"
-version: "2.10.13.post202611211629"
+version: "2.10.13.post202611232121"
 slug: music_assistant_jrhubott_stable
 description: >-
   Unofficial Music Assistant build: the latest upstream stable release plus jrhubott's stable-based fixes. Built from
