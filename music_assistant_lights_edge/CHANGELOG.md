@@ -1,5 +1,33 @@
 # Changelog
 
+## 2.11.0.dev202611241741
+
+Built 2026-11-24 18:02 UTC from:
+
+- server [`edge`](https://github.com/jrhubott/music-assistant-server/tree/1db37d4e22e700b5651a390d66a185aa3fb13871) (1db37d4e2)
+- frontend [`edge`](https://github.com/jrhubott/music-assistant-frontend/tree/4a20a356a808c9f174e261e8b8dcc7416d2ccc77) (4a20a356a)
+
+### Server: no new commits
+
+### Frontend: 16 new commits ([compare](https://github.com/jrhubott/music-assistant-frontend/compare/2c0b749358e6...4a20a356a808))
+
+- Bump eslint-plugin-vue from 10.11.1 to 10.12.1 (#3321) ([074579c](https://github.com/jrhubott/music-assistant-frontend/commit/074579c4d43bba3954e9a4b41a221cf582966a00))
+- Bump vue-i18n from 11.4.18 to 11.4.23 (#3325) ([90d1278](https://github.com/jrhubott/music-assistant-frontend/commit/90d1278ccd80164ac879bcbdb0b165b1dfbb8d4a))
+- Bump vue from 3.5.45 to 3.5.46 (#3318) ([3e83c76](https://github.com/jrhubott/music-assistant-frontend/commit/3e83c76d67f26482f6d0d87e99049888fb2fdb26))
+- Bump marked from 18.2.0 to 18.2.1 (#3319) ([3fa6512](https://github.com/jrhubott/music-assistant-frontend/commit/3fa6512b7363a54a95f5421dca00ccf571b972ac))
+- Bump tailwindcss from 4.3.3 to 4.3.5 (#3320) ([c0626ba](https://github.com/jrhubott/music-assistant-frontend/commit/c0626ba59b3d77a24675109420c7aa5f3fccdeac))
+- Bump tailwind-merge from 3.7.0 to 3.7.1 (#3323) ([97bdb06](https://github.com/jrhubott/music-assistant-frontend/commit/97bdb069665180f142a6b09caa090e42429f52a1))
+- Bump vite-plugin-webfont-dl from 3.13.1 to 3.14.1 (#3324) ([52e166f](https://github.com/jrhubott/music-assistant-frontend/commit/52e166fc69cf0ecf873d25c5678c6f720b96ee92))
+- Bump typescript-eslint from 8.72.1 to 8.73.0 (#3316) ([17b45c0](https://github.com/jrhubott/music-assistant-frontend/commit/17b45c032241091b6286cdc12d4260fa592ad742))
+- Bump eslint from 10.14.0 to 10.15.0 (#3322) ([da0f8be](https://github.com/jrhubott/music-assistant-frontend/commit/da0f8be834c26eb67797f4e16e2aaa8b85460391))
+- Bump lint-staged from 17.6.0 to 17.6.1 (#3317) ([2338303](https://github.com/jrhubott/music-assistant-frontend/commit/2338303a9140d7e898db063ec77fd4d03d62a1d9))
+- Bump actions/create-github-app-token from 3.3.0 to 3.4.0 (#3315) ([b278d1a](https://github.com/jrhubott/music-assistant-frontend/commit/b278d1a133e0a44365080e28c284655dc968d1ef))
+- Bump release-drafter/release-drafter from 7.10.0 to 7.11.0 (#3314) ([f4e9cd6](https://github.com/jrhubott/music-assistant-frontend/commit/f4e9cd6d095fa4b237f1c83066e4ea8c6f3fbe4d))
+- Bump actions/dependency-review-action from 5.0.0 to 5.0.1 (#3313) ([de8d35f](https://github.com/jrhubott/music-assistant-frontend/commit/de8d35f164bfa3795eb3e543e80820529fb7994c))
+- Make the play button's loading ring smoother (#3310) ([2e999bf](https://github.com/jrhubott/music-assistant-frontend/commit/2e999bfe569ffd75e0ebba7bc71e6e93a6c4356d))
+- Search listings when you pause typing instead of on every letter (#3307) ([89c7e1d](https://github.com/jrhubott/music-assistant-frontend/commit/89c7e1d9721bbc1ecfe7c306dd4a1bb00e1af59a))
+- Simplify the seed search in the smart playlist editor (#3306) ([ff00e62](https://github.com/jrhubott/music-assistant-frontend/commit/ff00e62fc50e6be518bb430d997641c181521aa7))
+
 ## 2.11.0.dev202611232121
 
 Built 2026-11-23 21:39 UTC from:
