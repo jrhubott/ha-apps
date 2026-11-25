@@ -1,5 +1,25 @@
 # Changelog
 
+## 2.11.0.dev202611252232
+
+Built 2026-11-25 22:57 UTC from:
+
+- server [`edge`](https://github.com/jrhubott/music-assistant-server/tree/1db37d4e22e700b5651a390d66a185aa3fb13871) (1db37d4e2)
+- frontend [`edge`](https://github.com/jrhubott/music-assistant-frontend/tree/b60d2a7387848f4b4003242028c4d2c5500f8701) (b60d2a738)
+
+### Server: no new commits
+
+### Frontend: 8 new commits ([compare](https://github.com/jrhubott/music-assistant-frontend/compare/4a20a356a808...b60d2a738784))
+
+- Lokalise translations update (#3312) ([14c6d47](https://github.com/jrhubott/music-assistant-frontend/commit/14c6d472d1ed9924b3fd0e75b1642c8d4e54f504))
+- Don't list recent searches when you search for pages (#3332) ([8ced67a](https://github.com/jrhubott/music-assistant-frontend/commit/8ced67abb3d23a97caa11bef8720a9c84b0a3396))
+- Don't search in the background when you switch to Pages (#3330) ([56f0126](https://github.com/jrhubott/music-assistant-frontend/commit/56f01266f5358bf4e7b9836fcd070d94d9d6a37f))
+- Fix a live sources search test that failed at random (#3331) ([8ba3968](https://github.com/jrhubott/music-assistant-frontend/commit/8ba396844c015d9d20e84e7100ed32068b889afb))
+- Stop searching in the background after you leave a search (#3329) ([f65e102](https://github.com/jrhubott/music-assistant-frontend/commit/f65e1025c10208ba3fa6a209e746fafe564a7b69))
+- Don't repeat the previous search when you change a search filter (#3309) ([87581db](https://github.com/jrhubott/music-assistant-frontend/commit/87581db34110ff137f32c7b5af84bc5f34f38445))
+- Leave the player out of the Live sources header (#3328) ([4601098](https://github.com/jrhubott/music-assistant-frontend/commit/460109859ad317bb88d99aa5129d083fd2b46e99))
+- Show the update of a community provider that does not run (#3327) ([6cef00d](https://github.com/jrhubott/music-assistant-frontend/commit/6cef00d5ff522002765d2e2e51f84970519f23c5))
+
 ## 2.11.0.dev202611241741
 
 Built 2026-11-24 18:02 UTC from:

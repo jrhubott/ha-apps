@@ -1,5 +1,20 @@
 # Changelog
 
+## 2.10.13.post202611252232
+
+Built 2026-11-25 22:57 UTC from:
+
+- server [`stable`](https://github.com/jrhubott/music-assistant-server/tree/418b827b3f72ba13606fb252678ee784dbd1ad3e) (418b827b3)
+- frontend [`stable`](https://github.com/jrhubott/music-assistant-frontend/tree/440b64bc0a1d8d0e512d270747d25187840499f2) (440b64bc0)
+
+Upstream release notes: https://github.com/music-assistant/server/releases/tag/2.10.13
+
+### Server: 1 new commit ([compare](https://github.com/jrhubott/music-assistant-server/compare/dfdf61ddee1c...418b827b3f72))
+
+- Fix the AirPlay Receiver sometimes not starting or stopping playback (#8065) ([00846a4](https://github.com/jrhubott/music-assistant-server/commit/00846a4a89535e441670a616b1d730f3b45f6e47))
+
+### Frontend: no new commits
+
 ## 2.10.13.post202611232121
 
 Built 2026-11-23 21:39 UTC from:
