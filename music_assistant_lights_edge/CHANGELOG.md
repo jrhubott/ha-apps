@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.11.0.dev202611261512
+
+Built 2026-11-26 15:37 UTC from:
+
+- server [`edge`](https://github.com/jrhubott/music-assistant-server/tree/1db37d4e22e700b5651a390d66a185aa3fb13871) (1db37d4e2)
+- frontend [`edge`](https://github.com/jrhubott/music-assistant-frontend/tree/e7715ffb742033bb058895101ab31a0087ce6ad7) (e7715ffb7)
+
+### Server: no new commits
+
+### Frontend: 1 new commit ([compare](https://github.com/jrhubott/music-assistant-frontend/compare/b60d2a738784...e7715ffb7420))
+
+- Keep PR automation working without `pull_request_target` (#3344) ([a4f9709](https://github.com/jrhubott/music-assistant-frontend/commit/a4f970909bb8aa11075b2120979dc8cee719a735))
+
 ## 2.11.0.dev202611252232
 
 Built 2026-11-25 22:57 UTC from:
