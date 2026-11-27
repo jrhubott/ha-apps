@@ -1,5 +1,41 @@
 # Changelog
 
+## 2.11.0.dev202611271857
+
+Built 2026-11-27 19:23 UTC from:
+
+- server [`edge`](https://github.com/jrhubott/music-assistant-server/tree/1db37d4e22e700b5651a390d66a185aa3fb13871) (1db37d4e2)
+- frontend [`edge`](https://github.com/jrhubott/music-assistant-frontend/tree/ee7ca9c41c721eed1d09d6a4f2c17e49d64d8b73) (ee7ca9c41)
+
+### Server: no new commits
+
+### Frontend: 24 new commits ([compare](https://github.com/jrhubott/music-assistant-frontend/compare/e7715ffb7420...ee7ca9c41c72))
+
+- Add a combobox component and use it in the link alias dialog (#3089) ([14711b6](https://github.com/jrhubott/music-assistant-frontend/commit/14711b6f538c6bc1d145bd10bde5342d3c228638))
+- Ignore the release of the press that opened the item menu (#3349) ([190e5ff](https://github.com/jrhubott/music-assistant-frontend/commit/190e5ffa429c15788a7720dfa1c044d847ffb482))
+- Update the Web player to sendspin-js 6.1.0 (#3346) ([05581f8](https://github.com/jrhubott/music-assistant-frontend/commit/05581f834def8ad57f35abd0097f63f43329566c))
+- Save the diagnostics settings and log levels from one save bar (#3359) ([b00dadf](https://github.com/jrhubott/music-assistant-frontend/commit/b00dadf0404aaeb27d595678b743cc4f593ca26d))
+- Leave out the section heading when a settings form has only one section (#3358) ([17a8bde](https://github.com/jrhubott/music-assistant-frontend/commit/17a8bdebdd21f8b16369e6707141786a1d1ba570))
+- Tidy up the header of a player's settings page (#3357) ([6922b11](https://github.com/jrhubott/music-assistant-frontend/commit/6922b11427f67692f855ddd630befeb2bff1b151))
+- Move what clicking or playing an item does to its own Tap & play settings page (#3356) ([a5f3254](https://github.com/jrhubott/music-assistant-frontend/commit/a5f32545c34c70804943f130b47d57257e8ffd37))
+- Add a group player from one dialog (#3355) ([b0a7807](https://github.com/jrhubott/music-assistant-frontend/commit/b0a7807758033e9a23e9bb9d4c2540b34acd662a))
+- Save settings from one bar at the bottom of the page (#3354) ([da2aade](https://github.com/jrhubott/music-assistant-frontend/commit/da2aade1145d71d46997108a0314b4edc75e746e))
+- Give a player's output protocols and player controls their own settings pages (#3352) ([8661cae](https://github.com/jrhubott/music-assistant-frontend/commit/8661caea943903174936c52a77cc483dce8d70b0))
+- Choose Standard or Expert in your profile, and keep Standard simpler (#3353) ([98f630a](https://github.com/jrhubott/music-assistant-frontend/commit/98f630ae7b4d0a7804db2fedd1e98d71dbc97525))
+- Keep the links in the Marketplace details together and send Get help to a community provider's issues (#3350) ([dfc3b9e](https://github.com/jrhubott/music-assistant-frontend/commit/dfc3b9e8d9c9ffa4b9a0aa6be467d986e5b32a4c))
+- Wrap long option descriptions in settings dropdowns (#3351) ([a361012](https://github.com/jrhubott/music-assistant-frontend/commit/a361012aac2350b62e2dc700181ab7195d2bd626))
+- Add some setup wizard UI/UX improvements (#3342) ([1a18bbe](https://github.com/jrhubott/music-assistant-frontend/commit/1a18bbeddd8026997fa238c7c71238df134b2b49))
+- Unify the media detail page headers (#3290) ([665207f](https://github.com/jrhubott/music-assistant-frontend/commit/665207f051a1b9c82905a68182f78a141c626fc0))
+- Move the config sliders, checkboxes and action buttons to shadcn-vue (#3336) ([148a10c](https://github.com/jrhubott/music-assistant-frontend/commit/148a10cfd68aa50edbaee601e2334f6f2a966f42))
+- Move the config list of text values to the shadcn-vue tags input (#3340) ([4d43c4a](https://github.com/jrhubott/music-assistant-frontend/commit/4d43c4acf7338977ca6628258e27528b1a74d327))
+- Move the config text, number and password fields to shadcn-vue (#3339) ([3530412](https://github.com/jrhubott/music-assistant-frontend/commit/3530412416defe6c5b8076fcf1fbc502b3d317d0))
+- Move the config dropdowns to the shadcn-vue select (#3338) ([712b59c](https://github.com/jrhubott/music-assistant-frontend/commit/712b59cbdd7024a9e70b0ce082fe9cc5baf3dcab))
+- Add config form validation and move the unsaved-changes dialog to shadcn-vue (#3337) ([b5f95bf](https://github.com/jrhubott/music-assistant-frontend/commit/b5f95bf148609b0bdeef3add4a8cc12d6589e2d5))
+- Show music sources in a list with columns, or as Marketplace cards (#3348) ([0b0e357](https://github.com/jrhubott/music-assistant-frontend/commit/0b0e3577b89ccaf9e68959d2f8ec2b4dc2ff4f20))
+- Browse the Marketplace from one toolbar, with smaller cards (#3347) ([9c26c6d](https://github.com/jrhubott/music-assistant-frontend/commit/9c26c6dcaca457704f0778d7490d9c97035f37e1))
+- Open the top hit when you press Enter in search (#3334) ([2c86b12](https://github.com/jrhubott/music-assistant-frontend/commit/2c86b12e7ceb5c9421e5d0907a2b24c0176a24ba))
+- Let the owner choose when a shared account plays for others (#3343) ([f1a86a3](https://github.com/jrhubott/music-assistant-frontend/commit/f1a86a3fb2e630e83585670170252030c87ecaa4))
+
 ## 2.11.0.dev202611261512
 
 Built 2026-11-26 15:37 UTC from:
