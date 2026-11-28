@@ -1,5 +1,5 @@
 name: "Music Assistant Edge (jrhubott)"
-version: "2.11.0.dev202611271857"
+version: "2.11.0.dev202611281856"
 slug: music_assistant_lights_edge
 description: >-
   Unofficial Music Assistant build: upstream development code plus jrhubott's feature branches (fixes and features in progress). Built from

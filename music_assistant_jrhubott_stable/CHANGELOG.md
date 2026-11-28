@@ -1,5 +1,51 @@
 # Changelog
 
+## 2.10.14.post202611281856
+
+Built 2026-11-28 19:23 UTC from:
+
+- server [`stable`](https://github.com/jrhubott/music-assistant-server/tree/8880fa73d713a5592e348c0f76ff34c7a7f13d63) (8880fa73d)
+- frontend [`stable`](https://github.com/jrhubott/music-assistant-frontend/tree/440b64bc0a1d8d0e512d270747d25187840499f2) (440b64bc0)
+
+Upstream release notes: https://github.com/music-assistant/server/releases/tag/2.10.14
+
+### Server: 32 new commits ([compare](https://github.com/jrhubott/music-assistant-server/compare/418b827b3f72...8880fa73d713))
+
+- Keep WiiM and Bose SoundTouch speakers at their own volume when AirPlay starts (#8176) ([a7af18f](https://github.com/jrhubott/music-assistant-server/commit/a7af18f396439d2557a64c4d192b06c8ea56e6d7))
+- Deezer: fix audiobooks stopping after the first chapter (#8054) ([abf2e29](https://github.com/jrhubott/music-assistant-server/commit/abf2e294109762d2ef954db7815b5ac5e1c57e85))
+- Check a radio station again after its address could not be reached (#8100) ([af3e64c](https://github.com/jrhubott/music-assistant-server/commit/af3e64cd3275f173f32c05402d026e060a72e209))
+- Stop a WiiM on squeezelite from pausing what plays right after a stop (#7968) ([d423c08](https://github.com/jrhubott/music-assistant-server/commit/d423c08c7ec4e91423ea4ac9fabb3313ba0ed8cd))
+- Keep the control connection to HomePods and Apple TVs open (#8145) ([4863556](https://github.com/jrhubott/music-assistant-server/commit/4863556623a511548adf88603fa950472ec1c6e8))
+- Don't create dashboard displays for Chromecast Audio and Home Mini speakers (#7997) ([c10303e](https://github.com/jrhubott/music-assistant-server/commit/c10303e4bb846f9c1a9c3074922cfe64f4e5714d))
+- Fix Spotify Connect staying silent when playback starts outside the Spotify app (#8129) ([136ad5b](https://github.com/jrhubott/music-assistant-server/commit/136ad5b68181ff9717120343bb58bc316e883f97))
+- Fix Spotify Connect hanging after a stop with go-librespot (#8127) ([034b653](https://github.com/jrhubott/music-assistant-server/commit/034b6531c75c749c78c926e0dd8db38e41406088))
+- Keep syncing YouTube Music tracks when an upload can't be resolved (#8130) ([80def9d](https://github.com/jrhubott/music-assistant-server/commit/80def9d66bbcfba8224809b9ad7b32d01e43a681))
+- Update airplay-cli to v0.5.19 (#8200) ([bc2a792](https://github.com/jrhubott/music-assistant-server/commit/bc2a792b8096881dc1656d2facc93488a993e384))
+- Bump `aiosendspin` to 11.0.0 to fix silent line-in from idle Sendspin devices (#8184) ([9acd461](https://github.com/jrhubott/music-assistant-server/commit/9acd4618b1c24ee6e97e07cd1f82fda9af0ce5fe))
+- Play podcast episodes from Spotify playlists instead of failing on them as tracks (#8188) ([5e82cba](https://github.com/jrhubott/music-assistant-server/commit/5e82cbad7e86dc4441691a71565405c62fe33ea7))
+- Sync Audible audiobooks that have no cover image (#7993) ([cb19678](https://github.com/jrhubott/music-assistant-server/commit/cb196781507b1ed1ac98828d2d2aadca8f6cc8a7))
+- Stop the queue when another device takes over Spotify playback (#8007) ([d5a765d](https://github.com/jrhubott/music-assistant-server/commit/d5a765dbc4c040d9a12b940251b665b0f907dcca))
+- Keep yt-dlp up to date for YouTube Music (#8137) ([cb55d5e](https://github.com/jrhubott/music-assistant-server/commit/cb55d5ee396d77f2ed97bdc2ffcd64cc82ec0440))
+- Stop an AirPlay play echo during group setup from resuming the old queue (#8103) ([55d4ae5](https://github.com/jrhubott/music-assistant-server/commit/55d4ae5b10ab69be7a439aa54d05758f4e3a6aec))
+- Sync uploaded YouTube Music music into the library (#8114) ([b340c52](https://github.com/jrhubott/music-assistant-server/commit/b340c5224bc89f75a07a923b20eb8399e6cda8a9))
+- ytmusicapi fails on uploaded album playlist (#7330) ([3be29f6](https://github.com/jrhubott/music-assistant-server/commit/3be29f6408ec31874d68ea2cd3907998d13fe856))
+- Fix playback stopping when the next track changes right after a track starts (#8101) ([d2a0e4a](https://github.com/jrhubott/music-assistant-server/commit/d2a0e4aeda0494c294f2462289e744547f149db4))
+- Fix Apple Music start delay that grows with track length (#8099) ([6949d78](https://github.com/jrhubott/music-assistant-server/commit/6949d7840bfe33bf4b37fba4b49ea7c83c0a9676))
+- Add a Bluesound player that doesn't answer at startup as unavailable (#7995) ([de4af03](https://github.com/jrhubott/music-assistant-server/commit/de4af03004d417a8a690efa3c4f85215984a7827))
+- Keep adding Bluesound players when a stereo pair speaker has no presets (#7996) ([8d5f87d](https://github.com/jrhubott/music-assistant-server/commit/8d5f87d0d196d3cb3b39475d024be22924a9b1de))
+- Decode HTML entities in radio stream titles (#7868) ([02e88bc](https://github.com/jrhubott/music-assistant-server/commit/02e88bc1f8ab1ea557eb09fe5568e5e9df9872c2))
+- MusicCast: don't show the previous track's info while on an input like TV (#8067) ([1a0b8d8](https://github.com/jrhubott/music-assistant-server/commit/1a0b8d893ae1389da44dd348c9114dc0c2702394))
+- Stop an announcement to an AirPlay group from resuming the old queue (#7959) ([6a3e9ea](https://github.com/jrhubott/music-assistant-server/commit/6a3e9eaab300b7feeabf1c5d51ba7cf94c542f76))
+- Pass Sonos volume changes through quickly during AirPlay playback (#7732) ([24e485b](https://github.com/jrhubott/music-assistant-server/commit/24e485b657525bc1cf663c5f795052b6216f5e80))
+- Remove CodSpeed benchmarks (#8146) ([bc94226](https://github.com/jrhubott/music-assistant-server/commit/bc94226141e4039ed5ed5cdb946499accfe96f0c))
+- Fix short audio gaps in live inputs when the server briefly stalls (#8138) ([7820190](https://github.com/jrhubott/music-assistant-server/commit/78201905246ea7b9ef9027e451ce5904b7b618dd))
+- Keep Spotify Connect paused when a speaker reopens its stream (#8049) ([150356f](https://github.com/jrhubott/music-assistant-server/commit/150356f48bf391b20f131ecb3f6bf1e884c555d2))
+- Let Cast speakers in a Sendspin group play short sounds from the start (#8119) ([3b33ba5](https://github.com/jrhubott/music-assistant-server/commit/3b33ba536794a93593a9e9602e13bae5cef3b4a7))
+- Fix missing last track when a CUE sheet lists one file per track (#8057) ([277fb34](https://github.com/jrhubott/music-assistant-server/commit/277fb34cd96dcb4b09352095e442cf73f9a74238))
+- Keep HEOS groups in sync after the controller reconnects (#7994) ([6f61ebc](https://github.com/jrhubott/music-assistant-server/commit/6f61ebcace66b366595995da6d2774633bc70c37))
+
+### Frontend: no new commits
+
 ## 2.10.13.post202611252232
 
 Built 2026-11-25 22:57 UTC from:

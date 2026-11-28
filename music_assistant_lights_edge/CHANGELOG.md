@@ -1,5 +1,27 @@
 # Changelog
 
+## 2.11.0.dev202611281856
+
+Built 2026-11-28 19:23 UTC from:
+
+- server [`edge`](https://github.com/jrhubott/music-assistant-server/tree/1db37d4e22e700b5651a390d66a185aa3fb13871) (1db37d4e2)
+- frontend [`edge`](https://github.com/jrhubott/music-assistant-frontend/tree/784aa9048c3eb702870ca40d6e41f3a5421c5794) (784aa9048)
+
+### Server: no new commits
+
+### Frontend: 10 new commits ([compare](https://github.com/jrhubott/music-assistant-frontend/compare/ee7ca9c41c72...784aa9048c3e))
+
+- Playback quality: friendly names in the audio chain (#3368) ([80bdc33](https://github.com/jrhubott/music-assistant-frontend/commit/80bdc334e52b9b190ab5fcf94ba63e811784a25a))
+- Give the DSP page the same header as the other player settings pages (#3364) ([e764f0d](https://github.com/jrhubott/music-assistant-frontend/commit/e764f0d5ed6061c6e254db8f4544652b3ef5d134))
+- Keep the add button visible on phones in settings lists (#3366) ([d5a93ec](https://github.com/jrhubott/music-assistant-frontend/commit/d5a93ec08178ff19dbdb8f2b16212a115ecd599e))
+- Make the header of a settings page compact on a phone (#3367) ([7272d1f](https://github.com/jrhubott/music-assistant-frontend/commit/7272d1f62e2a514ec41660e2b67d2a39bca69b1d))
+- Fix the Music Quiz dashboard on older Cast receivers (#3345) ([24b245f](https://github.com/jrhubott/music-assistant-frontend/commit/24b245f461adb24e1e60e00df813a6b9d9522029))
+- Anchor long-press menus to the touch position (#3362) ([f481a47](https://github.com/jrhubott/music-assistant-frontend/commit/f481a47827798aa67dd79127730203e43744de91))
+- Fix the Start setup button of a player overlapping the status icon on a phone (#3365) ([3700367](https://github.com/jrhubott/music-assistant-frontend/commit/3700367daa091815f9da484eb63aafb8b0ef819a))
+- Fix settings pages claiming unsaved changes after jumping from another one (#3363) ([f680ff4](https://github.com/jrhubott/music-assistant-frontend/commit/f680ff44546b6b2d7d55f4692c51a305306c64b0))
+- Allow moving and removing the next track on Sendspin players (#3326) ([57e83bd](https://github.com/jrhubott/music-assistant-frontend/commit/57e83bde9f77db2829539600d7393c6197ba9622))
+- Fix settings pages being cut off after scrolling past the end (#3361) ([d753d81](https://github.com/jrhubott/music-assistant-frontend/commit/d753d81a6346bd789ece686707129c7253b65382))
+
 ## 2.11.0.dev202611271857
 
 Built 2026-11-27 19:23 UTC from:
